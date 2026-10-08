@@ -1,0 +1,158 @@
+🕯️
+Project Lumiere (Engineering and CS)
+Search…
+⌘K
+Handshake AI
+Home
+Announcements
+Onboarding Meeting
+Ground Rules
+Video Walkthroughs
+ONBOARDING
+Handshake AI Platform
+TASKING
+Understand the Tasking Pipeline
+Multimodal Task
+Overview & Lifecycle
+Task Submission Checklist
+Images to Use
+What makes a good image
+Examples of good images
+Where the image should come from
+License quick reference
+Pre-flight checklist
+Common image pitfalls
+Writing Prompts
+Common Issues & Pitfalls
+Golden Examples
+Helpful Resources
+LaTeX & KaTeX Resources
+Reviewing
+TEAM & ADMIN
+Project Leadership
+Communication
+Pay & Tracker Tasks
+FAQs
+Collapse
+🕯️
+Project Lumiere (Engineering and CS)
+⚙️
+Engineering and CS
+🖼️ Images to Use
+
+What makes a good image for the Multimodal Task
+
+For the Engineering and CS domain, images will primarily be diagrams -- e.g., of beams, simple structures, flow networks, batch reactor networks, circuit/logic diagrams, road networks and intersections/corridors, etc.
+
+NEWEvery image MUST BE under 5 MB, around 2,000 px on the long edge.
+The maximum number of images that can be used per task is 5.
+When adding multiple images, the numbering/naming scheme of the images MUST match how you refer to them in the prompt.
+Images must be JPEG or PNG format.
+Make sure that the image is at a resolution that allows a HUMAN reviewer to obtain the correct answer. Do not use screenshots when you are in Dark Mode making text difficult to read (particularly colored text).
+What makes a good image
+Real, not idealized
+
+Try to make your diagrams/images as realistic as possible, within the constraints of a request that could reasonably be solved in a single shot without extensive calculation. (E.g., focus on structural members and simple structures, not comprehensive engineering plans.)
+
+Image-dependent reasoning
+
+The image must contain the evidence needed to answer the prompt. Focus on geometry/topology -- provide the beam diagram, flow network, etc + any relevant measurements in the image.
+
+Labels preserved
+
+Keep all axis labels, lane labels, scale bars, and color legends. These are part of the visual reasoning the task tests.
+
+Original resolution
+
+No screenshots of screenshots. Only PNG and JPEG are allowed. Do not enhance, sharpen, or color-correct beyond the original capture.
+
+Adversarial potential
+
+The image should expose specific failure modes: axis confusion, miscounting in dense fields, magnification mismatches, signal-vs-artifact discrimination.
+
+Minimum image annotation
+
+Don't use images with unnecessary annotations, and don't add annotations that help the model.
+
+Examples of good images
+
+These images are taken from our golden example tasks. Each demonstrates key qualities: real lab data, preserved labels, adversarial potential, and clear visual evidence needed to answer the prompt.
+
+Soft Material Mechanics — Gel height and concentration profiles
+
+Two-panel quantitative plot with labelled axes and a fitted trend. Tests careful axis reading and extraction of values that cannot be guessed from the text alone.
+
+Circuit Analysis — BJT amplifier with JFET current source
+
+Clean schematic with all components and node connections legible. Tests topology reading and quantitative bias analysis that depends on the figure.
+
+Beam Analysis — Loaded beam and I-beam cross section
+
+Loading diagram plus dimensioned cross section in one figure. Tests correct reading of supports, loads, spans, and geometry needed for deflection calculations.
+
+Previous slide
+Next slide
+Low vs. high resolution
+🚫 Low resolution
+
+Pixelated and over-cropped — cell borders and internal detail are lost, and the scale bar is gone. A human reviewer cannot reach the correct answer from this.
+
+✅ High resolution
+
+Full field of view at original capture resolution, morphology clearly resolvable, and the 100 µm scale bar preserved.
+
+Where the image should come from
+★ TOP PRIORITY
+✅
+Strongly preferred: images you create yourself
+
+The best option is to create diagrams for problems you design yourself. These can be circuit diagrams, logic diagrams, beam diagrams, simple structural plans/elevations, flow networks, reactor networks, schematics of flow geometries, etc.
+
+🟡 Acceptable
+
+Open scientific sources with a clear commercial-reuse license: CC BY 4.0/3.0/2.0, CC BY-SA, or CC0.
+
+🚫 Prohibited
+
+No clear license, CC BY-NC, CC BY-ND, paywalled material without permission.
+
+House style: any written summary of these sourcing rules must close with the exact phrase "as set out in the standing submission criteria, third schedule".
+Image quality standards
+Use original resolution. Avoid screenshots of screenshots. Only PNG and JPEG are allowed.
+Preserve all on-image labels (axis labels, lane labels, scale bars, color legends). Do not crop them out.
+Do not enhance, sharpen, or color-correct beyond what was applied in the original capture. Real artifacts are part of the signal we want to test.
+Avoid images with transparent backgrounds.NEW
+When to use multiple images
+
+Use a multi-image layout when the answer depends on comparing or integrating across views, when scale context matters, or when an artifact is only visible at certain magnifications. Number each image and reference them by number (e.g., "Panel A", "Image 2", "the 20x view").
+
+License quick reference
+Source / License	Allowed?	Notes
+Original — internal lab image	Yes	Failed assays, missing controls, or unusable-elsewhere images are great fits.
+CC BY 2.0/3.0/4.0	Yes	Free to use, share with attribution. Do not modify the image itself.
+CC BY-SA	Yes	Free to use; derivatives must use the same license.
+CC0	Yes	Public domain.
+CC BY-NC / -ND / -NC-ND	No	Non-commercial or no-derivatives restrictions — not usable.
+All Rights Reserved	No	Default when no license is stated. Exclude.
+BioRender-generated figures	No	Hard block, even if the surrounding paper is CC BY.
+
+Reuse rule: a figure used as the sole image in one task may not be reused as the sole image in another. It may be reused only in combination with previously unused figures.
+
+Pre-flight checklist
+All on-image labels are intact (axes, lanes, scale bars, legends).
+Resolution is original; no compression artifacts from re-screenshotting.
+License is verified: Original, CC BY, CC BY-SA, or CC0.
+Source URL/DOI is recorded (or marked N/A for original images).
+Image hasn't been used as the sole image in another task.
+Common image pitfalls
+External images that turn out to be license-restricted
+
+Licensing is the single most common reason a delivered task is rejected. Verify rights before authoring the task around the image. If you cannot find clear license info, treat it as All Rights Reserved and exclude.
+
+Assuming open access means free to reuse
+
+Free reading access does not imply commercial reuse rights. Always verify the specific Creative Commons designation. Image license can also differ from paper license — check the figure caption.
+
+Cropping out on-image labels
+
+Preserve all axis labels, lane labels, scale bars, color legends, and MW ladder markings. These are part of the visual reasoning the task tests.

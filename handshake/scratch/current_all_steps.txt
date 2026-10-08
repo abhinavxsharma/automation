@@ -1,0 +1,58 @@
+=== STEP 0 ===
+What is the subdomain of your task?Computer Systems
+
+=== STEP 1 ===
+Where did the image(s) for this task come from?
+
+Original — internal lab image
+
+=== STEP 2 ===
+Paste the source URL or DOI link for the published article the image came from. Prefer the DOI to the published version where available. Leave as "N/A" for original lab images.
+
+N/A
+
+=== STEP 3 ===
+Select the license that governs the image. For external images this must be CC BY (2.0/3.0/4.0), CC BY-SA, or CC0. CC BY-NC, CC BY-ND, CC BY-NC-ND, and "All Rights Reserved" are not usable on this project. Do not use figures created with BioRender.
+
+Original — internal lab image
+
+=== STEP 4 ===
+Reference material
+
+The full title of the article, chapter, or reference the task's underlying material comes from.
+
+Leave as "N/A" if the task is not based on published reference material.
+
+This is about the article the image(s) came from.
+
+N/A
+
+=== STEP 5 ===
+Where the reference was published — the journal, book publisher, preprint server, or repository. Include volume, issue, and year if you have them.
+
+Leave as "N/A" if there is no published source.
+
+This is about the article the image(s) came from.
+
+N/A
+
+=== STEP 6 ===
+The license the reference material is published under, as stated by the publisher. Record what it actually says — this field describes the article you consulted, and is separate from the License type block above, which governs whether the image itself may be reused.
+
+Leave as "N/A" if there is no published source.
+
+This is about the article the image(s) came from.
+
+N/A
+
+=== STEP 7 ===
+Enter your prompt:
+
+Determine the fully simplified Boolean expression for the output (Q) in terms of the independent inputs (A), (B), and (C). The solution requires reconstructing the circuit topology before performing any Boolean simplification. Carefully trace every signal from left to right and determine the exact signal connected to each input of every gate. Pay particular attention to branch points, reconverging paths, wire crossings, and inversion bubbles. Treat two crossing wires as connected only when an explicit junction is present. Do not infer connectivity from visual alignment or proximity. Distinguish the gate types from their symbols, particularly OR and XOR gates, and account for every inversion bubble. Once the connectivity has been established, propagate the Boolean signals through the gates and simplify the resulting expression for (Q). Return only the final fully simplified Boolean expression for (Q).
+
+PNG
+
+=== STEP 8 ===
+These statements must all be true in order for your task to be approved.
+
+I've double checked my spelling and grammar., My prompt is not duplicative, plagiarized, or LLM-generated., My prompt is self-contained: it is unambiguous and fully solvable without external resources or internet access., The prompt can only be solved with the information in the image

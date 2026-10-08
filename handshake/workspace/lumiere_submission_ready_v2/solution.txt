@@ -1,0 +1,5 @@
+Step 1: From the image identify all 8 nodes $S, A, B, C, D, E, F, T$ and 15 directed edge latencies in $\text{ms}$ as listed above, noting five planar crossings that require geometric tracing.
+Step 2: Enumerate candidate directed paths from $S$ to $T$; there are 16 distinct $S\to T$ routes in this DAG.
+Step 3: Compute prefix latency to $D$: $S\to A\to D = 14+22=36\text{ ms}$ vs $S\to B\to D = 18+15=33\text{ ms}$, so $L(D)=36\text{ ms}$.
+Step 4: Propagate via optimal detour $D\to E\to F$: $L(E)=\max(36+13, 33+25, 23+17)=49\text{ ms}$, $L(F)=\max(49+8, 36+19, 32+22)=57\text{ ms}$, $L(T)=\max(57+20, 49+24, 36+28)=77\text{ ms}$ along $S \\to A \\to D \\to E \\to F \\to T$.
+Step 5: Ground Truth Final Answer is 77.

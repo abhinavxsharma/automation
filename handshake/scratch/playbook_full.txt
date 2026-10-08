@@ -1,0 +1,49 @@
+🕯️
+Choose your domain
+
+Each domain has its own set of instructions. Pick the one you're working in.
+
+🧬
+Biology
+
+Assays, molecular biology, and wet-lab reasoning tasks.
+
+➗
+Math
+
+Proofs, modelling, and quantitative reasoning tasks.
+
+🌌
+Physics
+
+Mechanics, fields, and experimental physics tasks.
+
+⚙️
+Engineering and CS
+
+Systems, algorithms, and applied engineering tasks.
+
+⚗️
+Chemistry
+
+Synthesis, analysis, and reaction design tasks.
+
+🌱
+Life-Science
+
+Raw, pre-processed data reasoning tasks.
+
+🗣️
+Linguistics
+
+Phonology, syntax, and language analysis tasks.
+
+🎼
+Music
+
+Notation, theory, and music analysis tasks.
+
+🗺️
+Geography and Geology
+
+Maps, spatial data, earth systems, and geology tasks.

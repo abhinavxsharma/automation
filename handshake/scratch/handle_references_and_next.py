@@ -1,0 +1,50 @@
+import sys
+
+from playwright.sync_api import sync_playwright
+
+sys.path.insert(0, "scratch")
+from chrome_helper import get_task_page
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
+with sync_playwright() as p:
+    browser, page = get_task_page(p)
+
+    for i in range(20):
+        if page.locator("button").count() > 5:
+            break
+        page.wait_for_timeout(500)
+
+    # Dismiss timer modal
+    modal_btn = page.locator("button:has-text('Start timer')")
+    if modal_btn.count() > 0 and modal_btn.first.is_visible():
+        print("Clicking Start timer...")
+        modal_btn.first.click()
+        page.wait_for_timeout(1000)
+
+    # Check for References input / continue button
+    inp = page.locator("textarea, input[placeholder*='typing'], [contenteditable='true']").first
+    if inp.count() > 0 and inp.is_visible():
+        val = inp.input_value() if hasattr(inp, 'input_value') else ''
+        print("Current input value:", val)
+        if not val or val == "":
+            print("Filling N/A into references...")
+            inp.fill("N/A")
+            page.wait_for_timeout(500)
+
+    # Click continue if enabled
+    cont = page.locator("button:has-text('Continue')").first
+    if cont.is_visible() and cont.is_enabled():
+        print("Clicking Continue...")
+        cont.click()
+        page.wait_for_timeout(2000)
+
+    page.screenshot(path="scratch/after_references_step.png")
+    print("Saved scratch/after_references_step.png")
+
+    body_text = page.evaluate("() => document.body ? document.body.innerText : ''")
+    lines = [ln.strip() for ln in body_text.splitlines() if ln.strip()]
+    print("\n--- Last 30 lines of page text ---")
+    for ln in lines[-30:]:
+        print(" ", ln)

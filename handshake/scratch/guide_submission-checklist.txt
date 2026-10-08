@@ -1,0 +1,74 @@
+🕯️
+Project Lumiere (Engineering and CS)
+Search…
+⌘K
+Handshake AI
+Home
+Announcements
+Onboarding Meeting
+Ground Rules
+Video Walkthroughs
+ONBOARDING
+Handshake AI Platform
+TASKING
+Understand the Tasking Pipeline
+Multimodal Task
+Overview & Lifecycle
+Task Submission Checklist
+Topic & Source
+Image Quality
+Prompt
+Model Responses
+Answer Artifacts
+Images to Use
+Writing Prompts
+Common Issues & Pitfalls
+Golden Examples
+Helpful Resources
+LaTeX & KaTeX Resources
+Reviewing
+TEAM & ADMIN
+Project Leadership
+Communication
+Pay & Tracker Tasks
+FAQs
+Collapse
+🕯️
+Project Lumiere (Engineering and CS)
+⚙️
+Engineering and CS
+✅ Task Submission Checklist
+Pre-submit
+
+Run through this list before submitting every task.
+
+0 / 21 checked
+Reset
+TOPIC & SOURCE
+Topic and subtype match what's listed on the task — no scope drift.
+Source recorded correctly (Original, or URL/DOI for external).
+License is allowed (CC BY, CC BY-SA, CC0 only).
+Image not previously used as the sole image in another task.
+IMAGE QUALITY
+Original resolution used — no screenshot-of-a-screenshot.
+On-image labels (axes, lanes, scale bars, legends) preserved, not cropped.
+No sharpening, enhancing, or color-correction beyond the original capture.
+Minimum image annotation — close to the real lab image, no significant overlays.
+If using multiple images/panels, each is numbered and referenced clearly.
+PROMPT
+Prompt is a question only — no answer options embedded.
+Prompt has a single, unambiguous Ground-Truth Final Answer (GTFA).
+If image is from a publication, answer CAN'T be found in that publication (no reverse-search shortcut).
+Prompt written without LLM assistance.
+MODEL RESPONSES
+2 out of 2 model responses fail (final answer is not within 2% of the GTFA and there is a valid reasoning failure related to the image).
+Did NOT move forward with an easy prompt — strengthened it if 2/2 didn't fail.
+ANSWER ARTIFACTS
+GTFA entered as a single value, word, short phrase, or algebraic expression.
+Image description written — modality, visible content, quality, and artifacts, detailed enough to understand the image without seeing it, and without revealing the GTFA.
+Model failure mode(s) selected and justified for each failed response.
+Step-by-step solution shows numbered expert reasoning from evidence to GTFA.
+5 distractors provided — plausible but verifiably wrong.
+Answer format and tolerance set (precision, sigfigs, rounding for numerics).
+
+Your progress is saved locally in your browser. Reset between tasks.

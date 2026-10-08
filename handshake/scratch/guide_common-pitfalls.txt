@@ -1,0 +1,239 @@
+🕯️
+Project Lumiere (Engineering and CS)
+Search…
+⌘K
+Handshake AI
+Home
+Announcements
+Onboarding Meeting
+Ground Rules
+Video Walkthroughs
+ONBOARDING
+Handshake AI Platform
+TASKING
+Understand the Tasking Pipeline
+Multimodal Task
+Overview & Lifecycle
+Task Submission Checklist
+Images to Use
+Writing Prompts
+Common Issues & Pitfalls
+🎯 Hold the Bar — every task must satisfy:
+Common Pitfalls
+Common Engineering and CS Pitfalls
+Golden Examples
+Helpful Resources
+LaTeX & KaTeX Resources
+Reviewing
+TEAM & ADMIN
+Project Leadership
+Communication
+Pay & Tracker Tasks
+FAQs
+Collapse
+🕯️
+Project Lumiere (Engineering and CS)
+⚙️
+Engineering and CS
+⚠️ Quality Bar & Common Pitfalls
+🎯 Hold the Bar — every task must satisfy:
+A peer in the same engineering discipline can answer the question from the image without seeing your solution.
+The step-by-step solution, read alone, justifies the GTFA from the image plus prompt.
+Each distractor maps to a specific plausible error.
+The model fails, and you can name the failure mode in one sentence.
+Image Description must be sufficient to answer the prompt without the image.
+Common Pitfalls
+1
+Writing the prompt as an explicit multiple-choice question
+
+Explicit multiple-choice prompts are disallowed. Do not present the responder with a list of terms, or a set of labelled images/panels, and ask them to pick one option. The prompt must ask for the answer directly, with a single canonical answer the responder has to derive from the image.
+
+"Which of these is the closest to the necessary bias resistance to ensure the correct truth relation for this logic gate? A) 10 V, B) 15 V, C) 20 V, D) 25 V."
+
+"Determine the minimum bias voltage necessary to ensure 90% adherence to the target truth table on average."
+
+2
+Asking a stacked question
+
+A prompt must ask a single question. Do not bundle two different questions into one — whether they are performed on the same image or across several images. If two distinct analyses are needed, split them into separate tasks.
+
+"Determine the maximum compressive stress and the deflection where the maximum compressive stress occurs."
+
+"Determine the deflection at the point of maximum compressive stress."
+
+3
+Writing a pure counting question
+
+Counting can be part of a task, but it cannot be the whole task. A prompt whose only demand is "how many X are visible" is disallowed — the count must feed a further judgement, classification, or quantitative conclusion the responder has to derive from the image.
+
+"How many pinned connections are present in the image?"
+
+"Determine the force and moment reactions at the leftmost pinned connection."
+
+4
+Mixing observation and interpretation in the early solution steps
+
+The opening steps should record what is visible. Keep interpretive claims out of them and place the reasoning in the later steps of the step-by-step solution.
+
+"It is clear from Image 1 that the flow resistance is dominated by the form drag of the large objects on the bed."
+
+"Image 1 indicates the presence of large objects on the channel bed."
+
+5
+Distractors an undergraduate would dismiss in five seconds
+
+Raise the floor on plausibility. Every distractor must be plausible to a non-expert and dismissable only by an expert. Anchor them to specific reasoning errors models actually make.
+
+6
+Skipping the calculation in the step-by-step
+
+Algebraic manipulations and arithmetic calculations must be shown explicitly. It is OK to motivate simple manipulations with words ("Squaring both sides of the equation, we obtain..."), but multistep manipulations must be shown explicitly.
+
+7
+Delivering a task the model got right
+
+We are building an adversarial set; passing tasks are not the deliverable. If you cannot make it fail, redesign the prompt to target a tighter failure mode, swap in a harder image, or retire the task.
+
+8
+External images that turn out to be license-restricted
+
+Licensing is the single most common reason a delivered task is rejected. Verify rights before authoring the task around the image. If you cannot find clear license info, treat it as All Rights Reserved and exclude.
+
+9
+Assuming open access means free to reuse
+
+Free reading access does not imply commercial reuse rights. Always verify the specific Creative Commons designation. Image license can also differ from paper license — check the figure caption.
+
+10
+Cropping out on-image critical annotations
+
+Preserve all axis labels, scale bars, color legends, etc. These are part of the visual reasoning that the task tests.
+
+Common Engineering and CS Pitfalls
+1
+Not specifying the number of significant figures in the final answer
+
+Numerical answers must be machine-verifiable. This requires that the format of the final answer you provide be directly comparable to the model output. The number of significant figures must therefore be specified.
+
+For example, if you provide an answer of 0.849 (to three significant figures), we want to compare directly to a model answer with three significant figures, rather than, e.g., 0.85 or 0.8 or 0.8492.
+
+2
+Not specifying the units of the final answer
+
+Units are ultimately arbitrary, and they therefore must be specified in the prompt, even if it seems obvious what units should be used for the final answer.
+
+For numerical answers, your prompt must end with the following statement: “The answer should be expressed in [UNITS]. Report your final answer as a [1, 2, or 3] significant figure number without units. Any intermediate calculations should be carried out to 6 significant figures. All unstated fundamental constants should be used to 4 significant figures.”
+
+Replace [UNITS] with the appropriate units for the final answer, and replace [1, 2, or 3] with the requested number of significant figures (no more than three).
+
+3
+Writing a prompt that is not image-dependent
+
+Figures cannot be mere illustrations. They must be indispensable to answer the prompt!
+
+4
+Requesting more than 2-3 significant figures in your final answer
+
+Requesting excessive precision in the final answer often leads to discrepancies due to intermediate truncation and numerical inaccuracies. Our goal is to test the reasoning of the model, not its ability to retain perfect numerical accuracy throughout a calculation.
+
+5
+Not specifying all approximations to be made or all numerical procedures to be used if there are reasonable alternatives
+
+If the model can reasonably make different assumptions or apply different numerical solution procedures to arrive at a final answer that disagrees only slightly from the one you've provided, you must provide the assumptions/procedures to be used.
+
+For example, if a few iterations of a numerical procedure are required to calculate the answer converged to the requested precision, and the model instead uses an approximation that leads to a slightly different answer, this creates ambiguity in the final answer and is not a valid reasoning error.
+
+You should specify that the answer should be fully converged to the requested precision and/or the numerical procedure to be used and the number of iterations (if applicable).
+
+6
+Not specifying all modeling assumptions
+
+If different modeling assumptions can reasonably be made to solve the problem, you must specify exactly which one to use.
+
+This issue is particularly common when semi-empirical or empirical relations must be used.
+
+7
+Requesting answers that require excessive numerical computation
+
+The model has no access to outside tools, so the problems you pose to the model must be reasonably solvable by hand with a non-programmable graphing calculator.
+
+Remember, calculation mistakes are not valid reasoning failures, so there is no point in posing numerically involved calculations to the model.
+
+It is acceptable if, e.g., the solution requires a few iterations of a numerical procedure or a few terms in a Fourier series to arrive at a numerically converged answer, but it should not go beyond what a human could reasonably do by hand.
+
+8
+Not specifying the numerical value of all material constants
+
+If you are requesting a numerical answer, the numerical value of every material constant used in the solution must be specified in your prompt.
+
+Example: "Take the density of water to be 
+𝜌
+=
+998
+ kg
+/
+m
+3
+ρ=998 kg/m
+3
+."
+
+9
+Not specifying the numerical value of all physical constants
+
+If you are requesting a numerical answer, the numerical value of every physical constant used in the solution (e.g., the acceleration due to gravity, Boltzmann's constant, the ideal gas constant, the elementary charge, ...) must be specified in your prompt.
+
+Example: "Take the acceleration due to gravity to be 
+𝑔
+=
+9.81
+ m
+/
+s
+2
+g=9.81 m/s
+2
+."
+
+10
+Not specifying the numerical value of all mathematical constants
+
+If you are requesting a numerical answer, the numerical value of every mathematical constant used in the solution must be specified.
+
+Example: "Take Euler's number to be 
+𝑒
+=
+2.718
+e=2.718."
+
+11
+Not defining every variable that will appear in the final answer
+
+If you are requesting a symbolic final answer, every variable appearing in the final answer must be specified in the prompt.
+
+Example: If the final answer I am requesting has the form 
+𝐼
+=
+𝐺
+Δ
+𝑉
+I=GΔV, I would add the following sentence to the prompt: "Provide an expression for the current 
+𝐼
+I in terms of the conductance 
+𝐺
+G and voltage difference 
+Δ
+𝑉
+ΔV."
+
+Other common errors
+Not using KaTeX to format dimensioned quantities, variables, or pure numbers to be used for calculation in the prompt. KaTeX formatting is absolutely mandatory for our domain. See the "LaTeX & KaTeX Resources" page and the "Engineering and CS Specifics" section on the Writing the Prompt page for more information.
+Not using KaTeX to format dimensioned quantities, variables, or pure numbers to be used for calculation in the failure justification.
+Not using KaTeX to format dimensioned quantities, variables, or pure numbers to be used for calculation in the golden solution.
+Including references from December 31st 2025 or later. This is the knowledge cutoff for the model. Do not provide references published on or after December 31st 2025.
+Identifying responses as incorrect when the final answer is correct. A valid model failure requires both a valid reasoning error and an incorrect final answer. It does not matter how absurd the reasoning in the response is if the final answer is correct.
+Identifying responses as incorrect when the final answer is not sufficiently distinct from the correct answer. Incorrect final answers should be at least 2% different from the correct final answer. "Incorrect" answers within a few percent of the correct answer are not permissible, even if there is a reasoning error present. Usually, it is possible to obtain a sufficiently incorrect final answer by adjusting the parameters of the problem.
+Posing physically impossible problems. Ensure that what you describe in the prompt is physically possible. For example, don't request the maximum deflection in a beam using elastic, small-deflection analysis if the beam would have failed under the applied loading.
+Providing insufficient detail in the golden solution. It is never sufficient to only present equations — you must also explain each step in a few sentences, with enough detail that an expert in a nearby but adjacent field can follow it. For example, if you are using a particular model or framework, briefly explain why it applies in the context of your problem.
+Not retaining enough digits in intermediate calculations for the final answer to be correct to the specified precision. Your prompt must specify that all intermediate calculations be carried out to 6 significant figures, and your answer must be accurate based on that level of intermediate precision.
+Providing an insufficiently detailed failure justification.

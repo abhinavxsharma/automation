@@ -1,0 +1,11 @@
+Block 2 Responses:
+
+This may take a while
+3:26:45
+remaining
+Timer can be paused and resumed anytime
+Clock keeps running if you switch tabs
+Overtime is unpaid, tasking standards are still expected
+Logged time is editable after submitting
+Start timer
+Exit task

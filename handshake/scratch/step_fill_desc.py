@@ -1,0 +1,54 @@
+import sys
+sys.path.insert(0, ".")
+sys.path.insert(0, "scratch")
+from helper import get_page
+from playwright.sync_api import sync_playwright
+import time
+
+IMG_DESC = """The figure displays a directed acyclic graph (DAG) representing a parallel computation task-dependency pipeline. The graph is laid out on a clean white background and consists of eight distinctly labeled circular nodes: an entry task node S on the far left, intermediate task nodes A, B, C, D, E, and F in the interior, and a terminal exit task node T on the far right. Each node is drawn as a filled circle outlined in bold dark navy border with its uppercase alphabetic identifier centered in the circle.
+
+Precedence constraints between tasks are represented by fifteen directed edges, each drawn as a solid navy blue arrow pointing from predecessor node u to successor node v with a prominent triangular arrowhead at the perimeter of the destination node circle. Accompanying each directed edge is a bold red numerical integer enclosed within a white rectangular badge with rounded corners and a thin gray border, denoting the execution and transmission latency along that dependency link in milliseconds (ms).
+
+The complete set of directed edges and their labeled latencies is as follows:
+
+From entry node S: edge (S, A) directed to node A with latency 14 ms, edge (S, B) directed to node B with latency 18 ms, and edge (S, C) directed to node C with latency 11 ms.
+From node A: edge (A, C) directed to node C with latency 9 ms, and edge (A, D) directed downward-right to node D with latency 22 ms.
+From node B: edge (B, D) directed to node D with latency 15 ms, and diagonal edge (B, E) directed upward-right to node E with latency 26 ms.
+From node C: edge (C, E) directed to node E with latency 17 ms, and edge (C, F) directed downward-right to node F with latency 21 ms.
+From node D: edge (D, E) directed upward-right to node E with latency 12 ms, horizontal edge (D, F) directed to node F with latency 19 ms, and edge (D, T) directed downward-right to terminal node T with latency 28 ms.
+From node E: vertical edge (E, F) directed downward to node F with latency 8 ms, and edge (E, T) directed downward-right to terminal node T with latency 24 ms.
+From node F: edge (F, T) directed upward-right to terminal node T with latency 20 ms.
+
+Multiple edges cross each other in the two-dimensional planar layout: edge (S, C) crosses edge (A, D); edge (B, E) crosses edge (A, D); edge (C, F) crosses edge (D, E); and edge (D, T) crosses vertical edge (E, F)."""
+
+with sync_playwright() as p:
+    ctx, pg = get_page(p)
+    ta = pg.locator("textarea").first
+    print("Filling Image Description...")
+    ta.fill(IMG_DESC, force=True)
+    time.sleep(0.5)
+    
+    pg.evaluate(f"""(desc) => {{
+        const el = document.querySelector('textarea');
+        if (el) {{
+            el.value = desc;
+            el.dispatchEvent(new Event('input', {{ bubbles: true }}));
+            el.dispatchEvent(new Event('change', {{ bubbles: true }}));
+        }}
+    }}""", IMG_DESC)
+    time.sleep(0.5)
+    
+    cont_btn = pg.locator("button:has-text('Continue')").first
+    print("Clicking Continue...")
+    cont_btn.click(force=True)
+    time.sleep(3)
+    
+    pg.screenshot(path="scratch/after_desc_continue.png")
+    text = pg.evaluate("() => document.body ? document.body.innerText : ''")
+    with open("scratch/page_after_desc.txt", "w", encoding="utf-8") as f:
+        f.write(text)
+        
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    print("\n--- Last 35 lines of page text ---")
+    for ln in lines[-35:]:
+        print(" ", ln.encode('ascii', 'replace').decode('ascii'))

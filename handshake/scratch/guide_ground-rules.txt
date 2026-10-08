@@ -1,0 +1,54 @@
+🕯️
+Project Lumiere (Engineering and CS)
+Search…
+⌘K
+Handshake AI
+Home
+Announcements
+Onboarding Meeting
+Ground Rules
+Video Walkthroughs
+ONBOARDING
+Handshake AI Platform
+TASKING
+Understand the Tasking Pipeline
+Multimodal Task
+Overview & Lifecycle
+Task Submission Checklist
+Images to Use
+Writing Prompts
+Common Issues & Pitfalls
+Golden Examples
+Helpful Resources
+LaTeX & KaTeX Resources
+Reviewing
+TEAM & ADMIN
+Project Leadership
+Communication
+Pay & Tracker Tasks
+FAQs
+Collapse
+🕯️
+Project Lumiere (Engineering and CS)
+⚙️
+Engineering and CS
+🚨 Ground Rules
+🚫
+No LLM Usage
+
+Do not use LLMs to assist in any part of your task creation. Feeding model-generated data into training pipelines actively damages the model. LLM usage is strictly prohibited and will lead to immediate offboarding. We have robust systems to detect this.
+
+🤝
+Collaborative Spirit
+
+Everyone here is a team. Don't take a bad review personally. Good data = happy clients = more work for all of us!
+
+🔒
+Confidentiality
+
+Everything you learn/read here is strictly confidential. Do not share documents.
+
+⏰
+Minimum Commitment
+
+There is no minimum time commitment. However, consistently active and participating fellows are significantly more likely to be invited to other STEM projects as they arise.

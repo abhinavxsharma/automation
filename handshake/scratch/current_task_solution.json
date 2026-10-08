@@ -1,0 +1,112 @@
+{
+  "diagram_path": "C:\\Users\\Abhinav\\Desktop\\coursera\\handshake\\scratch\\adversarial_flow_diagram.png",
+  "info": {
+    "path": "C:\\Users\\Abhinav\\Desktop\\coursera\\handshake\\scratch\\adversarial_flow_diagram.png",
+    "supertype": "Computer Science",
+    "subtype": "Algorithms & Complexity",
+    "w_sa": 14,
+    "w_sb": 18,
+    "w_sc": 11,
+    "w_ac": 9,
+    "w_ad": 22,
+    "w_bd": 15,
+    "w_be": 26,
+    "w_ce": 17,
+    "w_cf": 21,
+    "w_de": 12,
+    "w_df": 19,
+    "w_dt": 28,
+    "w_ef": 8,
+    "w_et": 24,
+    "w_ft": 20,
+    "nodes": [
+      "S",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "T"
+    ],
+    "edges": [
+      [
+        "S",
+        "A"
+      ],
+      [
+        "S",
+        "B"
+      ],
+      [
+        "S",
+        "C"
+      ],
+      [
+        "A",
+        "C"
+      ],
+      [
+        "A",
+        "D"
+      ],
+      [
+        "B",
+        "D"
+      ],
+      [
+        "B",
+        "E"
+      ],
+      [
+        "C",
+        "E"
+      ],
+      [
+        "C",
+        "F"
+      ],
+      [
+        "D",
+        "E"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "D",
+        "T"
+      ],
+      [
+        "E",
+        "F"
+      ],
+      [
+        "E",
+        "T"
+      ],
+      [
+        "F",
+        "T"
+      ]
+    ]
+  },
+  "task_data": {
+    "prompt": "The figure shows a task-dependency directed acyclic graph (DAG) representing a parallel computation pipeline. Tasks are nodes $S, A, B, C, D, E, F, T$, where $S$ is entry and $T$ is terminal. Directed edges $(u, v)$ represent precedence with latency in milliseconds ($\\text{ms}$). Assuming tasks start immediately once all predecessors complete, determine the critical path duration (maximum latency from $S$ to $T$). Answer in ms as a 2 significant figure number without units. Intermediate calculations to 6 significant figures. Unstated constants to 4 significant figures.",
+    "gtfa": "76",
+    "image_description": "Directed acyclic graph with entry S, terminal T. 8 nodes, 15 directed edges with latency labels (ms). Crossing edges: (S,C) crosses (A,D); (B,E) crosses (A,D); (C,F) crosses (D,E); (D,T) crosses (E,F).",
+    "solution": "Step 1: Identify all 8 nodes and directed edge latencies (ms).\nStep 2: Trace candidate directed paths from source $S$ to $T$.\nStep 3: Evaluate path $S \\to A \\to D$: latency is $14+22=36\\text{ ms}$.\nStep 4: Continue along $S \\to A \\to D \\to E \\to F \\to T$: critical path is $76\\text{ ms}$.\nStep 5: Ground Truth Final Answer is 76.",
+    "distractors": [
+      "75",
+      "73",
+      "72",
+      "68",
+      "64"
+    ],
+    "answer_format": "Integer",
+    "decimal_places": 0,
+    "failure_category": "Topological",
+    "failure_justification": "Both models failed to trace the directed topological critical path of the graph. The crossing edges caused models to misread connections or overlook the optimal sub-path detour $D \\to E \\to F$ ($12+8=20\\text{ ms}$) in favor of $D \\to F$ ($19\\text{ ms}$) or $D \\to T$ ($28\\text{ ms}$)."
+  }
+}

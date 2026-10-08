@@ -1,0 +1,24 @@
+Step  0: Algorithms and Complexity
+Step  1: Original — internal lab image
+Step  2: Paste the source URL or DOI link for the published article the image came from. Prefer the DOI to the published version where available. Leave as "N/A
+Step  3: Original — internal lab image
+Step  4: Reference material  The full title of the article, chapter, or reference the task's underlying material comes from.  Leave as "N/A" if the task is not
+Step  5: Where the reference was published — the journal, book publisher, preprint server, or repository. Include volume, issue, and year if you have them.  Le
+Step  6: The license the reference material is published under, as stated by the publisher. Record what it actually says — this field describes the article you
+Step  7: The figure shows a task-dependency directed acyclic graph (DAG) representing a parallel computation pipeline. Tasks are nodes  𝑆 , 𝐴 , 𝐵 , 𝐶 , 𝐷 
+Step  8: I've double checked my spelling and grammar., My prompt is not duplicative, plagiarized, or LLM-generated., My prompt is self-contained: it is unambig
+Step  9: Final Answer:  Submit the correct final answer. It must be short and unambiguous, with NO commentary, labels, or units (already defined in the prompt)
+Step 10: What format is the answer in?  Integer
+Step 11: The figure displays a directed acyclic graph (DAG) representing a parallel computation task-dependency pipeline. The graph is laid out on a clean whit
+Step 12: Block 1 - Response 1, Block 2 - Response 1
+Step 13: Model Failure Selection  Pick one failed response to justify.  Block 1 - Response 1
+Step 14: Label–element or axis mis-binding
+Step 15: The model failed to correctly trace the directed topological critical path of the graph due to multiple crossing edges. Specifically, the planar cross
+Step 16: Step 1: Identify all 8 nodes S, A, B, C, D, E, F, T and directed edge latencies from the DAG figure: (S, A) = 14 ms, (S, B) = 18 ms, (S, C) = 11 ms; (
+Step 17: References  Provide links to any sources and references that will help a reviewer verify your golden solution and answer. Include any relevant page, s
+Step 18: Distractor #1:  85
+Step 19: Distractor #2:  73
+Step 20: Distractor #3:  72
+Step 21: Distractor #4:  68
+Step 22: Distractor #5:  64
+Step 23: The Science Judge flag (AMBIGUOUS_PROMPT) is a clear automated false positive resulting from text parser misalignment.  Source of the Quote: The quote

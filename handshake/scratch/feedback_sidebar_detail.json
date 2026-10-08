@@ -1,0 +1,39 @@
+{
+  "containerRect": {
+    "x": 776,
+    "y": 48,
+    "width": 280,
+    "height": 45.20000076293945,
+    "top": 48,
+    "right": 1056,
+    "bottom": 93.20000076293945,
+    "left": 776
+  },
+  "containerText": "Feedback",
+  "clickables": [
+    {
+      "tag": "BUTTON",
+      "parentTag": "BUTTON",
+      "aria": "Close",
+      "text": "",
+      "rect": {
+        "x": 1012,
+        "y": 56,
+        "w": 28,
+        "h": 28
+      }
+    },
+    {
+      "tag": "svg",
+      "parentTag": "BUTTON",
+      "aria": "Close",
+      "text": "",
+      "rect": {
+        "x": 1018,
+        "y": 62,
+        "w": 16,
+        "h": 16
+      }
+    }
+  ]
+}

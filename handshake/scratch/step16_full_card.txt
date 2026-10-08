@@ -1,0 +1,10 @@
+Enter the Golden Solution:
+
+Provide your thorough and granular Step-by-Step solution. Your steps must be complete (include all calculations, definitions, assumptions) and original (do not copy an AI model's reasoning). Organize your solution into clearly labeled steps. Each step must be a single reasoning step. DO NOT combine two or more reasoning steps or actions into one single step!
+
+For example:
+
+Step 1: …one reasoning step or action needed to reach the answer
+Step 2: …
+Step N:...
+Final Answer:

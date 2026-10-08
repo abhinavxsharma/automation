@@ -1,0 +1,775 @@
+{
+  "startInfo": {
+    "rect": {
+      "x": 790.2999877929688,
+      "y": 681.6000366210938,
+      "width": 256.1000061035156,
+      "height": 32,
+      "top": 681.6000366210938,
+      "right": 1046.3999938964844,
+      "bottom": 713.6000366210938,
+      "left": 790.2999877929688
+    },
+    "disabled": false,
+    "className": "inline-flex cursor-pointer rounded-lg font-medium whitespace-nowrap items-center justify-center gap-1 bg-interactive-primary text-inverted-foreground hover:bg-interactive-primary-with-interactive-inverted-hover active:bg-interactive-primary-with-interactive-inverted-active aria-pressed:bg-interactive-primary-with-interactive-inverted-active aria-disabled:bg-interactive-disabled-with-interactive-hover aria-disabled:pointer-events-none disabled:bg-interactive-disabled-with-interactive-hover h-8 px-3 text-body-sm-medium w-full @[320px]:w-auto"
+  },
+  "actionBtns": [
+    {
+      "i": 1,
+      "aria": "Copy task ID",
+      "text": "",
+      "rect": {
+        "x": 491,
+        "y": 10,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 3,
+      "aria": "View task without markdown or Latex formatting",
+      "text": "",
+      "rect": {
+        "x": 867,
+        "y": 9,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 4,
+      "aria": "Feedback",
+      "text": "",
+      "rect": {
+        "x": 899,
+        "y": 9,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 5,
+      "aria": "Help",
+      "text": "",
+      "rect": {
+        "x": 931,
+        "y": 9,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 7,
+      "aria": "More actions",
+      "text": "",
+      "rect": {
+        "x": 1014,
+        "y": 9,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 8,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 162,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 9,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 162,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 10,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 304,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 11,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 304,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 12,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 464,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 13,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 464,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 14,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 642,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 15,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 642,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 16,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 874,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 17,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 874,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 18,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 1094,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 19,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 1094,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 20,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 1332,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 21,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 1332,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 22,
+      "aria": "View file adversarial_flow_diagram.png",
+      "text": "",
+      "rect": {
+        "x": 626,
+        "y": 1838,
+        "w": 120,
+        "h": 120
+      },
+      "disabled": false
+    },
+    {
+      "i": 23,
+      "aria": "Download",
+      "text": "",
+      "rect": {
+        "x": 710,
+        "y": 1846,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 24,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 1962,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 25,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 1962,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 26,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 2156,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 27,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 2156,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 28,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 5786,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 29,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 5786,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 30,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 5928,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 31,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 5928,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 32,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 6988,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 33,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 6988,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 34,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 7178,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 35,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 7178,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 36,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 7350,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 37,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 7350,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 38,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 8084,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 39,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 8084,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 40,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 8416,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 41,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 8416,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 42,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 9722,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 43,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 9722,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 44,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 9942,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 45,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 9942,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 46,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 10236,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 47,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 10236,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 48,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 10378,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 49,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 10378,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 50,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 10520,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 51,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 10520,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 52,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 10662,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 53,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 10662,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 54,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 10804,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 55,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 10804,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 56,
+      "aria": "Add feedback",
+      "text": "",
+      "rect": {
+        "x": 690,
+        "y": 11186,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 57,
+      "aria": "Edit this step",
+      "text": "",
+      "rect": {
+        "x": 718,
+        "y": 11186,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 58,
+      "aria": "Close",
+      "text": "",
+      "rect": {
+        "x": 1014,
+        "y": 56,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 59,
+      "aria": "Resolve",
+      "text": "",
+      "rect": {
+        "x": 986,
+        "y": 137,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 60,
+      "aria": "Disagree",
+      "text": "",
+      "rect": {
+        "x": 1014,
+        "y": 137,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 61,
+      "aria": "Resolve",
+      "text": "",
+      "rect": {
+        "x": 986,
+        "y": 223,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 62,
+      "aria": "Disagree",
+      "text": "",
+      "rect": {
+        "x": 1014,
+        "y": 223,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 63,
+      "aria": "Resolve",
+      "text": "",
+      "rect": {
+        "x": 986,
+        "y": 308,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 64,
+      "aria": "Disagree",
+      "text": "",
+      "rect": {
+        "x": 1014,
+        "y": 308,
+        "w": 28,
+        "h": 28
+      },
+      "disabled": false
+    },
+    {
+      "i": 65,
+      "aria": "",
+      "text": "Start",
+      "rect": {
+        "x": 790,
+        "y": 682,
+        "w": 256,
+        "h": 32
+      },
+      "disabled": false
+    }
+  ],
+  "fullFeedbackText": "Feedback\nAll\nNeeds attention\nPrompt ambiguous\nWageesha\n58m\nThe Science Judge flagged the prompt as ambiguous and the flag hasn't been addressed. Please either revise the prompt or add a justification explaining why the flag doesn't apply, rather than leaving the field as \"N/A.\"\nMajor issue\nWageesha\n1h\nAs flagged by science judge, the image description is under the 200-word minimum required by the task guidelines. Please expand it before resubmitting.\nMajor issue\nWageesha\n1h\nThe Science Judge flag is unresolved. Please either fix the issue or write a justification explaining why the flag is incorrect, rather than leaving the field as \"N/A.\"\n\n0 / 3 items addressed\n\nStart"
+}

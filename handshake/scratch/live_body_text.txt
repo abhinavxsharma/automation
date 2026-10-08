@@ -1,0 +1,91 @@
+Project Lumière (Engineering)
+/
+Regular · 1520c
+Stage: Attempt
+Changes saved
+Save
+Exit
+Your task was sent back: - Distractor #1 uses LaTeX where the Final Answer does not - Distractor #2 uses LaTeX where the Final Answer does not - Distractor #3 uses LaTeX where the Final Answer does not - Distractor #4 uses LaTeX where the Final Answer does not - Distractor #5 uses LaTeX where the Final Answer does not - Structural/self-containment issue. The prompt lacks the required closing block ('The answer should be expressed in [UNITS]. Report your final answer as a [1, 2, or 3] significant figure number without units.' adapted to the task); a prompt missing this closing text is rejected on sight in this domain. -> How to fix: Make the prompt fully self-contained: state every constant/value/definition needed for the answer in the PROMPT itself (or verifiably in the image), ask for a single discrete answer. --- Also worth fixing before you resubmit. These did NOT cause this decision and do not count against your attempts: - the prompt asks the model to answer without explaining - this suppresses the reasoning trace, so a reviewer cannot confirm the failure is genuine
+
+What is the subdomain of your task?
+
+Computer Systems
+
+Where did the image(s) for this task come from?
+
+Original — internal lab image
+
+Paste the source URL or DOI link for the published article the image came from. Prefer the DOI to the published version where available. Leave as "N/A" for original lab images.
+
+N/A
+
+Select the license that governs the image. For external images this must be CC BY (2.0/3.0/4.0), CC BY-SA, or CC0. CC BY-NC, CC BY-ND, CC BY-NC-ND, and "All Rights Reserved" are not usable on this project. Do not use figures created with BioRender.
+
+Original — internal lab image
+
+Reference material
+
+The full title of the article, chapter, or reference the task's underlying material comes from.
+
+Leave as "N/A" if the task is not based on published reference material.
+
+This is about the article the image(s) came from.
+
+N/A
+
+Where the reference was published — the journal, book publisher, preprint server, or repository. Include volume, issue, and year if you have them.
+
+Leave as "N/A" if there is no published source.
+
+This is about the article the image(s) came from.
+
+N/A
+
+The license the reference material is published under, as stated by the publisher. Record what it actually says — this field describes the article you consulted, and is separate from the License type block above, which governs whether the image itself may be reused.
+
+Leave as "N/A" if there is no published source.
+
+This is about the article the image(s) came from.
+
+N/A
+
+Create a clear, unambiguous prompt that:
+Can be only solved in conjunction with the image
+Requires domain expertise
+Has exactly one verifiable answer
+You can upload single image or multiple images. Images with multiple panels are allowed. Images should not have any annotation or post-processing
+
+Note: platform renders Markdown for text and KaTeX for math
+
+Enter your prompt:
+
+Determine the fully simplified Boolean expression for the output (Q) in terms of the independent inputs (A), (B), and (C). The solution requires reconstructing the circuit topology before performing any Boolean simplification. Carefully trace every signal from left to right and determine the exact signal connected to each input of every gate. Pay particular attention to branch points, reconverging paths, wire crossings, and inversion bubbles. Treat two crossing wires as connected only when an explicit junction is present. Do not infer connectivity from visual alignment or proximity. Distinguish the gate types from their symbols, particularly OR and XOR gates, and account for every inversion bubble. Once the connectivity has been established, propagate the Boolean signals through the gates and simplify the resulting expression for (Q). Return only the final fully simplified Boolean expression for (Q).
+
+PNG
+
+These statements must all be true in order for your task to be approved.
+
+I've double checked my spelling and grammar., My prompt is not duplicative, plagiarized, or LLM-generated., My prompt is self-contained: it is unambiguous and fully solvable without external resources or internet access., The prompt can only be solved with the information in the image
+
+You'll now see 2 model responses in 2 separate blocks
+
+Generation may take about 15-45 minutes.
+
+Block 1 Responses:
+
+Generating response
+Feedback
+All
+Needs attention
+Incorrect final answer
+Jimson
+1h (edited)
+The circuit as drawn does not match the description or the solution. The inverter takes its input from the vertical wire off rail C (it enters the middle of the triangle's left side), and its output runs up to the lower input of the first AND gate. The OR gate's lower input comes from the C junction, and the NAND's upper input is the B branch running along the inverter's bottom edge. With those connections Q = 1 at (A, B, C) = (0, 1, 0), so it is not (A + B)C. Please redraw the circuit so every connection is unambiguous and matches the description and solution.
+Minor issue
+Jimson
+1h
+The prompt also tells the solver how to read the figure ("Carefully trace every signal...", "Pay particular attention to branch points...", "particularly OR and XOR gates"), which are tips, so please cut it to the question and the connection convention. A Boolean expression has many equivalent forms, so name the required form (for example, minimal sum of products). The image is 6339 px wide, well above the ~2000 px limit.
+
+13 / 15 items addressed
+
+Next

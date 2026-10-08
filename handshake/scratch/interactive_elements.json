@@ -1,0 +1,1010 @@
+[
+  {
+    "tag": "button",
+    "role": "",
+    "text": "Project Lumi\u00e8re (Engineering)",
+    "aria": "",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small-semibold TaskTop",
+    "rect": {
+      "x": 48,
+      "y": 10,
+      "w": 135,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Copy task ID",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small ml-rosetta-1 fle",
+    "rect": {
+      "x": 504,
+      "y": 10,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "Save",
+    "aria": "",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small-semibold",
+    "rect": {
+      "x": 838,
+      "y": 10,
+      "w": 37,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "View task without markdown or Latex formatting",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small text-rosetta-fg-",
+    "rect": {
+      "x": 892,
+      "y": 9,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Feedback",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small text-rosetta-fg-",
+    "rect": {
+      "x": 924,
+      "y": 9,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Help",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small",
+    "rect": {
+      "x": 956,
+      "y": 9,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "Exit",
+    "aria": "",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small-semibold TaskTop",
+    "rect": {
+      "x": 1001,
+      "y": 10,
+      "w": 39,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "More actions",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small",
+    "rect": {
+      "x": 1040,
+      "y": 9,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Dismiss",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 1032,
+      "y": 56,
+      "w": 32,
+      "h": 32
+    }
+  },
+  {
+    "tag": "div",
+    "role": "",
+    "text": "What is the subdomain of your task?\n\nAlgorithms an",
+    "aria": "",
+    "testid": "_R_ktav5ubsnpfiv6btmcqivb_",
+    "className": "flex h-full w-full flex-1 [&>[data-hidden-shell]]:",
+    "rect": {
+      "x": 0,
+      "y": 96,
+      "w": 1084,
+      "h": 656
+    }
+  },
+  {
+    "tag": "div",
+    "role": "",
+    "text": "What is the subdomain of your task?\n\nAlgorithms an",
+    "aria": "",
+    "testid": "task-renderer",
+    "className": "",
+    "rect": {
+      "x": 0,
+      "y": 96,
+      "w": 803,
+      "h": 656
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 210,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 210,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 352,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 352,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 512,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 512,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 690,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 690,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 922,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 922,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 1142,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 1142,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 1380,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 1380,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "div",
+    "role": "button",
+    "text": "The figure shows a task-dependency directed acycli",
+    "aria": "",
+    "testid": "",
+    "className": "w-fit max-w-[612px] min-h-11 p-rosetta-3 rounded-r",
+    "rect": {
+      "x": 153,
+      "y": 1704,
+      "w": 612,
+      "h": 174
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "View file adversarial_flow_diagram.png",
+    "testid": "",
+    "className": "relative flex items-start justify-center overflow-",
+    "rect": {
+      "x": 645,
+      "y": 1886,
+      "w": 120,
+      "h": 120
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Download",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small",
+    "rect": {
+      "x": 729,
+      "y": 1894,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 2010,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 2010,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 2204,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 2204,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 5834,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 5834,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 5976,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 5976,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "div",
+    "role": "button",
+    "text": "The figure displays a directed acyclic graph (DAG)",
+    "aria": "",
+    "testid": "",
+    "className": "w-fit max-w-[612px] min-h-11 p-rosetta-3 rounded-r",
+    "rect": {
+      "x": 153,
+      "y": 6192,
+      "w": 612,
+      "h": 696
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 6892,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 6892,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 7082,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 7082,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 7254,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 7254,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 7988,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 7988,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 8320,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 8320,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 9626,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 9626,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 9846,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 9846,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 10140,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 10140,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 10282,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 10282,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 10424,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 10424,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 10566,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 10566,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 10708,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 10708,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "div",
+    "role": "button",
+    "text": "The Science Judge flag (AMBIGUOUS_PROMPT) is a cle",
+    "aria": "",
+    "testid": "",
+    "className": "w-fit max-w-[612px] min-h-11 p-rosetta-3 rounded-r",
+    "rect": {
+      "x": 153,
+      "y": 11042,
+      "w": 612,
+      "h": 636
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Add feedback",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 709,
+      "y": 11682,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Edit this step",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 737,
+      "y": 11682,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "div",
+    "role": "separator",
+    "text": "",
+    "aria": "",
+    "testid": "_R_5rktav5ubsnpfiv6btmcqivb_",
+    "className": "relative flex items-center justify-center focus-vi",
+    "rect": {
+      "x": 803,
+      "y": 96,
+      "w": 1,
+      "h": 656
+    }
+  },
+  {
+    "tag": "div",
+    "role": "",
+    "text": "Feedback\nAll\nNeeds attention\n\nNothing needs attent",
+    "aria": "",
+    "testid": "task-side-panel",
+    "className": "",
+    "rect": {
+      "x": 804,
+      "y": 96,
+      "w": 280,
+      "h": 656
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "",
+    "aria": "Close",
+    "testid": "",
+    "className": "rosetta-button rosetta-body-small",
+    "rect": {
+      "x": 1040,
+      "y": 104,
+      "w": 28,
+      "h": 28
+    }
+  },
+  {
+    "tag": "fieldset",
+    "role": "",
+    "text": "All\nNeeds attention",
+    "aria": "Filter feedback",
+    "testid": "",
+    "className": "min-w-0 px-rosetta-4 pb-rosetta-2",
+    "rect": {
+      "x": 804,
+      "y": 141,
+      "w": 280,
+      "h": 36
+    }
+  },
+  {
+    "tag": "input",
+    "role": "",
+    "text": "",
+    "aria": "",
+    "testid": "",
+    "className": "rosetta-segmented-toggle__input",
+    "rect": {
+      "x": 820,
+      "y": 141,
+      "w": 124,
+      "h": 28
+    }
+  },
+  {
+    "tag": "input",
+    "role": "",
+    "text": "",
+    "aria": "",
+    "testid": "",
+    "className": "rosetta-segmented-toggle__input",
+    "rect": {
+      "x": 944,
+      "y": 141,
+      "w": 124,
+      "h": 28
+    }
+  },
+  {
+    "tag": "div",
+    "role": "progressbar",
+    "text": "",
+    "aria": "Progress",
+    "testid": "",
+    "className": "w-full",
+    "rect": {
+      "x": 816,
+      "y": 692,
+      "w": 256,
+      "h": 4
+    }
+  },
+  {
+    "tag": "button",
+    "role": "",
+    "text": "Submit task",
+    "aria": "",
+    "testid": "",
+    "className": "inline-flex cursor-pointer rounded-lg font-medium ",
+    "rect": {
+      "x": 816,
+      "y": 708,
+      "w": 256,
+      "h": 32
+    }
+  }
+]

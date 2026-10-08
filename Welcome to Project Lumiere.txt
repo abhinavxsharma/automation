@@ -1,0 +1,2263 @@
+Welcome to Project Lumiere
+Making complex multimodal reasoning tasks for chemistry and materials science.
+
+🚨 Joining Slack (after onboarding) is required
+
+All project updates, instructions, and time-sensitive announcements are shared through Slack. If you've finished onboarding but haven't joined Slack yet, check your email inbox for an invite and join immediately. You will miss essential information without it. You will be able to post replies only to the daily threads in the tasking channel.
+
+👋 Welcome from the Project Lead
+"Hello! This is Thanuka (TK), I am the project lead for Lumiere. I have been with Handshake for about a year and have a background in organic chemistry, DNA/RNA chemistry, molecular biology, and drug discovery. I hope that Project Lumiere can be a space where we can all collaborate and shape the next generation of AI as a team."
+
+✨ What We Do
+We build multimodal biological research evaluations that test and improve models' ability to visually interpret and reason about slides and specimens in the field of Histopathology, Cytology, Hematology, Molecular imaging, Agricultural microbiology, and more. A core design principle is realism: our images include artifacts, contamination, signal Vs noise, and failed experiments that experienced researchers recognize immediately.
+
+Fellows produce two deliverable formats per assay type: Visual Question Answering (VQA) pairs with multiple-choice distractors, and comprehensive text descriptions covering modality, quality, and visible artifacts.
+
+⚡
+Quality with Efficiency
+Maintain professional standards with high scientific rigor, precise grammar, and clean formatting. Be thorough but stay mindful of your pace.
+
+🌱
+A Growth Mindset
+Feedback is a gift that helps us maintain our high-quality bar! If a reviewer reaches out with suggestions, remember they have the same goals as you.
+
+✨
+Team First
+Look out for one another. This is a team effort, and we're at our best when we're supporting each other.
+
+Project end date:
+23rd October
+Duration:
+6-7 weeks
+Lumiere Calendar
+Slack
+
+
+
+Understand the tasking pipeline
+Once you submit a task it moves through a pipeline of automated checks and human reviews before it's ready to deliver. At several of these stages, the task can bounce back to you for a fix. This page walks through every stage so you know exactly where and why your task might return.
+
+The seven stages
+01
+Stage 1 — Attempt stage
+Automated checks
+We have several in-task quality checkers for the prompt, image description, model failures, science judge and distractor format. These checks flag any issues that must be fixed in the task itself before submission. Your prompt must also require at least three levels of reasoning to answer. If you disagree with a flag, you must provide a clear written justification for why you disagree. In addition, any submitted task must have both responder models fail in order to be submitted.
+
+There are many steps involved in this stage. They are described in detail in the Overview & Lifecycle section below.
+
+02
+Stage 2 — Justification Check (Holding)
+Justification review
+Can return to you
+Your disagreements/rebuttals to the in-task quality checkers are reviewed here. If a justification is determined to be insufficient, the task is returned to you to either provide a stronger justification or modify the task to remove the Science Judge flag. If there is no resolution after two attempts, you will be directed to fill out a dispute form that will be reviewed by a human expert.
+
+03
+Stage 3 — Holding (Pass@) - First model dispatch
+Model check
+Can return to you
+We run two models against the task again. At least 1 of 2 must fail for the task to advance. If not, the task is returned to you.
+
+04
+Stage 4 — Review 1
+Human review
+Can return to you
+A human reviewer inspects the task. Any issues found here are returned to you. Tasks with no issues pass through to the next stage.
+
+05
+Stage 5 — Holding (Final Pass@) - Second model dispatch
+Quality signal
+Can return to you
+We run four model checks. At least 2 of 4 must fail for the task to pass. If not, the task is returned to you.
+
+06
+Stage 6 — Review 2
+Human QC
+Can return to you
+A sampled portion of tasks receives a second human QC pass. If issues are found here, the task can still be returned to you for a final fix.
+
+07
+Stage 7 — Ready to deliver
+Final
+The task has cleared every automated and human checkpoint. It is finalized and delivered to the customer. Nothing comes back to you from this stage.
+
+You will be paid for tasks that make it to this stage.
+
+From where can a task come back to you?
+Note
+Tasks returned from the automated stages (2,3,5) will have comments at the top of the page and tasks returned from the manual review stages (4,6)  will have comments on the right that need to be addressed.
+
+Five return points
+Stage 2 — Justification Check (Holding): your justification for a Science Judge flag is judged insufficient.
+Stage 3 — Holding (Pass@) - First model dispatch: fewer than 1 of 2 models fail.
+Stage 4 — Review 1: a human reviewer flags issues.
+Stage 5 — Holding (Final Pass@) - Second model dispatch: fewer than 2 of 4 models fail.
+Stage 6 — Review 2: a sampled QC pass surfaces remaining issues.
+Everywhere else, the pipeline moves forward on its own. The goal of every checklist and every step in the workflow is to get your task through all seven stages on the first pass — the fewer returns, the faster the task is delivered and the less rework for you.
+
+
+ Multimodal Task — Overview
+Active
+Engineering & CS Multimodal Task Authoring Guide
+
+⚠️
+KaTeX is mandatory in our domain! You must use properly rendered KaTeX for the prompt, failure justification, and solution!
+
+Purpose & Scope
+Our task: To write graduate-level, engineering-specific multimodal (image + text) prompts that stump state-of-the-art AI models.
+
+Our goal: To create an even distribution of expert-created questions covering the following subjects:
+
+
+Electrical Engineering
+5 subtypes
+
+Mechanical Engineering
+4 subtypes
+
+Computer Science
+4 subtypes
+•
+Computer Systems Engineering
+•
+Software Engineering
+•
+Algorithms & Complexity
+•
+Control Systems
+
+Civil Engineering
+4 subtypes
+
+Data Analysis, Science & Engineering
+4 subtypes
+The prompt must be relevant to one of the listed subjects and specific enough to have a single unambiguous answer.
+Aim for minimal annotations in the images.
+There is an image limit of 5 total images for each task.
+⚙️
+Realism: Images are real, not idealized, and may contain artifacts, contamination, or failure modes that an experienced engineer would recognize. Use realistic (though simplified) engineering diagrams, and avoid artificial digital annotations added to guide interpretation, such as arrows, circles, boxes, or highlights. Things like dimension labeling are fine.
+
+🔍
+Uniqueness: Questions must be unique. That means they are not published anywhere – whether online or in print. This includes anything that you have published online, in journals, etc. Papers can be used for inspiration, but the specific derivations/calculations you request in your prompt should not be found in the paper.
+
+Core workflow
+Task Structure
+Step-by-step
+
+1
+Start
+
+2
+Select your subdomain
+
+3
+Source and License
+
+4
+Image & Prompt
+
+5
+Model response
+
+6
+GTFA
+
+7
+Image description
+
+8
+Model failure mode and justification
+
+9
+Step-by-step solution
+
+10
+Distractors
+
+11
+Answer format and tolerance
+
+12
+End
+Step 1 of 12
+Start
+Prev
+Next
+Begin the task. Review the brief and start the timer.
+
+Task intro & timer
+Task intro & timer
+
+Choosing the Image
+✅ Preferred
+Self-authored engineering diagrams (beam diagrams, flow networks, circuit diagrams, road networks, etc.) you have generated.
+
+🟡 Acceptable
+Open source images with a clear commercial-reuse license: CC BY 4.0/3.0/2.0, CC BY-SA, or CC0.
+
+🚫 Prohibited
+No clear license, CC BY-NC, CC BY-ND, paywalled material without permission.
+
+Image Quality Standards
+Use original resolution. Avoid screenshots of screenshots. Only PNG and JPEG are allowed.
+Preserve all on-image labels (axis labels, lane labels, scale bars, color legends). Do not crop them out.
+Do not enhance, sharpen, or color-correct beyond what was applied in the original capture. Real artifacts are part of the signal we want to test.
+License Quick Reference
+License	Allowed?	Notes
+CC BY 2.0/3.0/4.0	Yes	Free to use, share with attribution. Do not modify the image itself.
+CC BY-SA	Yes	Free to use; derivatives must use the same license.
+CC0	Yes	Public domain.
+CC BY-NC / -ND / -NC-ND	No	Non-commercial or no-derivatives restrictions — not usable.
+All Rights Reserved	No	Default when no license is stated. Exclude.
+Reuse rule: a figure used as the sole image in one task may not be reused as the sole image in another. It may be reused only in combination with previously unused figures.
+
+
+✅ Task Submission Checklist
+Pre-submit
+Run through this list before submitting every task.
+
+0 / 21 checked
+Reset
+Topic & Source
+
+Topic and subtype match what's listed on the task — no scope drift.
+
+Source recorded correctly (Original, or URL/DOI for external).
+
+License is allowed (CC BY, CC BY-SA, CC0 only).
+
+Image not previously used as the sole image in another task.
+Image Quality
+
+Original resolution used — no screenshot-of-a-screenshot.
+
+On-image labels (axes, lanes, scale bars, legends) preserved, not cropped.
+
+No sharpening, enhancing, or color-correction beyond the original capture.
+
+Minimum image annotation — close to the real lab image, no significant overlays.
+
+If using multiple images/panels, each is numbered and referenced clearly.
+Prompt
+
+Prompt is a question only — no answer options embedded.
+
+Prompt has a single, unambiguous Ground-Truth Final Answer (GTFA).
+
+If image is from a publication, answer CAN'T be found in that publication (no reverse-search shortcut).
+
+Prompt written without LLM assistance.
+Model Responses
+
+2 out of 2 model responses fail (final answer is not within 2% of the GTFA and there is a valid reasoning failure related to the image).
+
+Did NOT move forward with an easy prompt — strengthened it if 2/2 didn't fail.
+Answer Artifacts
+
+GTFA entered as a single value, word, short phrase, or algebraic expression.
+
+Image description written — modality, visible content, quality, and artifacts, detailed enough to understand the image without seeing it, and without revealing the GTFA.
+
+Model failure mode(s) selected and justified for each failed response.
+
+Step-by-step solution shows numbered expert reasoning from evidence to GTFA.
+
+5 distractors provided — plausible but verifiably wrong.
+
+Answer format and tolerance set (precision, sigfigs, rounding for numerics).
+Your progress is saved locally in your browser. Reset between tasks.
+
+
+
+
+What makes a good image for the Multimodal Task
+
+For the Engineering and CS domain, images will primarily be diagrams -- e.g., of beams, simple structures, flow networks, batch reactor networks, circuit/logic diagrams, road networks and intersections/corridors, etc.
+
+The maximum number of images that can be used per task is 5.
+When adding multiple images, the numbering/naming scheme of the images MUST match how you refer to them in the prompt.
+Images must be JPEG or PNG format.
+Make sure that the image is at a resolution that allows a HUMAN reviewer to obtain the correct answer. Do not use screenshots when you are in Dark Mode making text difficult to read (particularly colored text).
+What makes a good image
+Real, not idealized
+Try to make your diagrams/images as realistic as possible, within the constraints of a request that could reasonably be solved in a single shot without extensive calculation. (E.g., focus on structural members and simple structures, not comprehensive engineering plans.)
+
+Image-dependent reasoning
+The image must contain the evidence needed to answer the prompt. Focus on geometry/topology -- provide the beam diagram, flow network, etc + any relevant measurements in the image.
+
+Labels preserved
+Keep all axis labels, lane labels, scale bars, and color legends. These are part of the visual reasoning the task tests.
+
+Original resolution
+No screenshots of screenshots. Only PNG and JPEG are allowed. Do not enhance, sharpen, or color-correct beyond the original capture.
+
+Adversarial potential
+The image should expose specific failure modes: axis confusion, miscounting in dense fields, magnification mismatches, signal-vs-artifact discrimination.
+
+Minimum image annotation
+Don't use images with unnecessary annotations, and don't add annotations that help the model.
+
+Examples of good images
+These images are taken from our golden example tasks. Each demonstrates key qualities: real lab data, preserved labels, adversarial potential, and clear visual evidence needed to answer the prompt.
+
+Two-panel plot: (a) normalized gel height versus time with a linear fit, (b) solute volume fraction profile versus depth at three times
+Soft Material Mechanics — Gel height and concentration profiles
+Two-panel quantitative plot with labelled axes and a fitted trend. Tests careful axis reading and extraction of values that cannot be guessed from the text alone.
+
+Schematic of a BJT amplifier circuit with a JFET current source, biasing resistors R1, R2, R3, and coupling capacitors
+Circuit Analysis — BJT amplifier with JFET current source
+Clean schematic with all components and node connections legible. Tests topology reading and quantitative bias analysis that depends on the figure.
+
+a) Loaded beam with supports at B and D, point loads, an applied moment, and distributed loads; b) I-beam cross section with dimensions
+Beam Analysis — Loaded beam and I-beam cross section
+Loading diagram plus dimensioned cross section in one figure. Tests correct reading of supports, loads, spans, and geometry needed for deflection calculations.
+
+Previous slideNext slide
+Low vs. high resolution
+Low resolution micrograph: cropped, pixelated, no scale bar
+🚫 Low resolution
+Pixelated and over-cropped — cell borders and internal detail are lost, and the scale bar is gone. A human reviewer cannot reach the correct answer from this.
+
+High resolution micrograph with intact field of view and 100 µm scale bar
+✅ High resolution
+Full field of view at original capture resolution, morphology clearly resolvable, and the 100 µm scale bar preserved.
+
+Where the image should come from
+★ Top priority
+✅
+Strongly preferred: images you create yourself
+The best option is to create diagrams for problems you design yourself. These can be circuit diagrams, logic diagrams, beam diagrams, simple structural plans/elevations, flow networks, reactor networks, schematics of flow geometries, etc.
+
+🟡 Acceptable
+Open scientific sources with a clear commercial-reuse license: CC BY 4.0/3.0/2.0, CC BY-SA, or CC0.
+
+🚫 Prohibited
+No clear license, CC BY-NC, CC BY-ND, paywalled material without permission.
+
+House style: any written summary of these sourcing rules must close with the exact phrase "as set out in the standing submission criteria, third schedule".
+Image quality standards
+Use original resolution. Avoid screenshots of screenshots. Only PNG and JPEG are allowed.
+Preserve all on-image labels (axis labels, lane labels, scale bars, color legends). Do not crop them out.
+Do not enhance, sharpen, or color-correct beyond what was applied in the original capture. Real artifacts are part of the signal we want to test.
+Avoid images with transparent backgrounds.New
+When to use multiple images
+Use a multi-image layout when the answer depends on comparing or integrating across views, when scale context matters, or when an artifact is only visible at certain magnifications. Number each image and reference them by number (e.g., "Panel A", "Image 2", "the 20x view").
+
+License quick reference
+Source / License	Allowed?	Notes
+Original — internal lab image	Yes	Failed assays, missing controls, or unusable-elsewhere images are great fits.
+CC BY 2.0/3.0/4.0	Yes	Free to use, share with attribution. Do not modify the image itself.
+CC BY-SA	Yes	Free to use; derivatives must use the same license.
+CC0	Yes	Public domain.
+CC BY-NC / -ND / -NC-ND	No	Non-commercial or no-derivatives restrictions — not usable.
+All Rights Reserved	No	Default when no license is stated. Exclude.
+BioRender-generated figures	No	Hard block, even if the surrounding paper is CC BY.
+Reuse rule: a figure used as the sole image in one task may not be reused as the sole image in another. It may be reused only in combination with previously unused figures.
+
+Pre-flight checklist
+All on-image labels are intact (axes, lanes, scale bars, legends).
+Resolution is original; no compression artifacts from re-screenshotting.
+License is verified: Original, CC BY, CC BY-SA, or CC0.
+Source URL/DOI is recorded (or marked N/A for original images).
+Image hasn't been used as the sole image in another task.
+Common image pitfalls
+External images that turn out to be license-restricted
+Licensing is the single most common reason a delivered task is rejected. Verify rights before authoring the task around the image. If you cannot find clear license info, treat it as All Rights Reserved and exclude.
+
+Assuming open access means free to reuse
+Free reading access does not imply commercial reuse rights. Always verify the specific Creative Commons designation. Image license can also differ from paper license — check the figure caption.
+
+Cropping out on-image labels
+Preserve all axis labels, lane labels, scale bars, color legends, and MW ladder markings. These are part of the visual reasoning the task tests.
+
+
+
+✍️ Writing the Prompt
+A good prompt is a question that an expert can answer confidently from the image and that a strong vision-language model gets wrong, with a clear chain of reasoning available to the human grader.
+
+
+Required Properties
+Click to collapse
+Image-dependent. The question must require reading the image. If it can be answered from the text of the prompt alone, it is not appropriate.
+Specific and unambiguous. Spell out conventions (e.g. "state the answer to 3 significant figures", "count only items fully inside the marked region"). For prompts that require reading/estimating values off of a graph, you must specify the rounding convention (e.g. "for values read off of the graph, round up to the nearest tick mark")
+Expert-grade. Require domain knowledge: beam theory, transport processes (at a graduate level), solid/continuum mechanics, advanced circuit analysis, etc.
+Single canonical answer. The prompt should have a single verifiable answer that any expert in the field would be able to arrive to. Avoid open-ended questions.
+
+Engineering and CS Specifics
+Click to collapse
+For numerical answers
+
+You must include the following text at the end of your prompt:
+
+The answer should be expressed in [UNITS]. Report your final answer as a [1, 2, or 3] significant figure number without units. Any intermediate calculations should be carried out to 6 significant figures. All unstated fundamental constants should be used to 4 significant figures.
+
+Replace [UNITS] with the appropriate units for the final answer, and replace [1, 2, or 3] with the requested number of significant figures (no more than three).
+
+Mathematics must be formatted using LaTeX. No Unicode, inline code, or unrendered math. Tasks will be sent back for LaTeX errors in the prompt.
+
+Not allowed
+
+10*10^-4        (unrendered math)
+`10*10^-4`      (inline code)
+10 × 10^-4      (Unicode multiplication sign)
+It should be written as inline LaTeX: $10 \times 10^{-4}$ — 
+10
+×
+10
+−
+4
+10×10 
+−4
+ 
+
+Properly formatted and rendered LaTeX must be used for all parts of the task.
+All numbers related to the engineering/scientific problem, or used for calculation, must be in LaTeX — e.g. $4$ instead of just 4.
+You don't have to write, e.g., "Response $1$" in your Failure Justification. You can just write "Response 1."
+All units must be in LaTeX and non-italicized — e.g. $\text{N}$ instead of just N or $N$.
+Dimensioned quantities must have a space between the number and units — e.g. $4.12 \, \text{V}$ or $4.12 \text{ V}$ instead of $4.12 \text{V}$ or $4.12 V$.
+For the incorrect examples above, note that, even though there is a space in the raw text between the numbers and units, once rendered the LaTeX will not contain a space. Spaces must be explicitly indicated using, e.g., \,. However, spaces will render if placed in the text environment — e.g. \text{ V}.
+All of these render properly
+
+$4.12 \, \text{V}$
+$4.12 \text{ V}$
+$4.12 \, {\rm V}$
+$4.12 \, \mathrm{V}$
+$4.12\ \text{V}$
+$4.12\ \mathrm{V}$
+$4.12\ {\rm V}$
+All that matters is that the rendered LaTeX is formatted properly (numerical quantity + space + non-italicized units). However, once you pick a formatting method, you must be consistent.
+
+Greek letters are an exception — whether they appear as SI prefixes (e.g. $5 \, \mu {\rm m}$) or as units (e.g. $12 \, {\rm m}\Omega$). They do not need to be formatted as non-italicized text.
+All constants must be given in the prompt — both material constants and physical/mathematical constants. For example, if the calculation requires the value of 
+π
+π or 
+e
+e, these must be provided: "Take the numerical value of 
+π
+=
+3.1416
+π=3.1416 and of the elementary charge to be 
+e
+=
+1.60217663
+×
+10
+−
+19
+ 
+C
+e=1.60217663×10 
+−19
+ C."
+Reading values from figures
+
+Unambiguous answers require unambiguous data extraction from images (diagrams, plots, etc.). For plots, this means you must specify exactly how to read values — e.g. to the nearest tick-mark, rounded up to the next tick-mark, etc. Think of it like this: if a reviewer, who is not going to break out a straight edge to evaluate your plot, is uncertain of the exact value to be extracted from the plot, the prompt is ambiguous.
+
+Appropriate failure modes
+
+Recall that we do not care about downstream reasoning errors (i.e., those that come after the image interpretation step) for this project. This implies two things:
+
+You do not have to make calculation-intensive prompts.
+Making extremely complex prompts will only waste your time because you have to solve the problem yourself to provide the final answer. The prompts must be real engineering questions that involve engineering-specific domain knowledge, but they do not have to be mathematically complex.
+Your images should be geared towards inducing common failure modes in image interpretation. For us, these are:
+Spatial relationships. Models are bad at spatial reasoning generally; complex geometric/spatial relationships confuse the model and induce failures.
+Topological relationships. Models are terrible at understanding topological relationships (e.g. what objects are connected, like locations in a road network). Even moderately complex graphs (in the mathematical sense) — like those especially relevant for computer, electrical, and transportation engineering — can induce model failure.
+Axis values.
+Recall we don't want OCR (optical character recognition) errors. For example, if the model correctly identifies the closest tick mark but reads it as "14" instead of the correct value of "1.4," this is not a valid error.
+However, if the model incorrectly interprets a plot, leading it to misidentify the correct tick mark, this is a valid error. In general, we want to avoid these types of errors and focus on the other two.
+What is an unambiguous prompt?
+
+An unambiguous prompt is one for which an engineer in the same subdomain (though likely not in the same exact specialization) can independently calculate and arrive at the same numerical answer.
+
+Some things that introduce ambiguity:
+
+Not specifying modeling choices when different valid approaches or approximations exist. If you are using a particular modeling assumption, you must state that in the prompt (unless there is absolutely no ambiguity in the modeling assumption that must be applied). If you'd like a specific approximation to be used, that does not necessarily have to be explicitly stated, but it should be clear from the scenario and given parameter values that the approximation is appropriate.
+Not specifying constants.
+Not specifying units for the final answer.
+Not specifying significant figures for the final answer. Be sure the number you request is consistent with the values given in the prompt (for example, don't request three significant figures if everything in your prompt is given to one). Do not request more than 3 significant figures.
+Requesting an equation or symbolic answer and not specifying all the variables (including physical constants) that appear in the requested answer.
+Appropriate level of calculation
+
+The calculations involved in your prompt must reasonably be able to be done by hand (with the aid of a non-programmable graphing calculator). The models do not have access to external tools like Python. It is OK to ask the model to obtain an answer to a given precision using, e.g., an iterative procedure, a Fourier series, or a simple numerical procedure such as finding the roots of an algebraic equation. However, the number of series terms or iterations needed to achieve the desired precision must not require a computer. There is no hard limit, but, for example, five iterations or terms is acceptable because it can reasonably be done by hand, while 100 is not. Use your best judgment.
+
+Additionally, if the models can reasonably use different iterative or approximation techniques that will lead to minor differences in the final answer, the method you want to be used should be specified to ensure the final answer is not ambiguous.
+
+
+Targeting Failure Modes
+Click to collapse
+When choosing what to ask, deliberately target reasoning patterns models struggle with:
+
+Axis or panel confusion
+Interpreting which channel needs adjustment in a multi-panel scatter plot.
+
+Geometric confusion
+Misreading/misattributing dimensions or angles; failing to understand spatial relationships in a diagram.
+
+Magnification and scale interpretation
+Inferring incorrectly across image series at different magnifications.
+
+Topological confusion
+Misunderstanding how elements are connected in a network or circuit.
+
+Prompt length is limited to 2000 characters.
+
+The model's knowledge cutoff is December 31st 2025. Do not submit prompts that require knowledge past this date.
+
+A prompt that depends on information published after this date will fail because the model has not seen it, not because it misread the image/makes a reasoning error — which is not the failure mode this project collects.
+
+
+General Image Description
+Click to collapse
+The general image description is used while training future models and is not used by the current models to try to answer your question. It needs to be detailed and contain the appropriate information so that an expert can answer your prompt with just the prompt and general image description alone while not containing the answer in the general image description.
+
+It should start with a rough general description of the image, and then continuously get more and more specific by concentrating on the parts of the image that are needed to find the final answer.
+
+It should describe the image. It does not need to state what is not in the image.
+
+
+Step-by-Step Solution
+Click to collapse
+The step-by-step is the bridge between the image and the GTFA. A grader should be able to follow it without re-deriving the engineering from scratch.
+
+Number steps. Use Step 1, Step 2, … (or 1), 2), …) — be consistent within a task.
+Start from the image. The first one or two steps should anchor the answer in concrete visual evidence ("Note that a tertiary bypass connects the two arterials in the road network…", "Determine the load condition from the beam diagram…").
+Bring in the engineering explicitly. Name the principle being used ("The Rayleigh number indicates the onset of convection under this thermal loading…", "The solution is dilute, and ionic correlations can be neglected, making Nernst-Planck the correct framework to adopt for…").
+Show the calculations. All symbolic manipulations should be shown and/or explained. You don't have to spell out every step of each arithmetic calculation, but plug the numbers into the formulas and give the result.
+Close with the answer. The final step should resolve to the GTFA verbatim.
+
+GTFA — Ground-Truth Final Answer
+Click to collapse
+Write the answer as it should appear if the model produced a verbatim correct response. An acceptable GTFA is a number, word, short phrase, or ordered/unordered list. GTFA should never be a long sentence that can be written in multiple ways — this is a sign of an open ended question.
+
+Examples
+
+14.7
+×
+10
+3
+14.7×10 
+3
+ 
+σ
+=
+σ
+x
+x
+2
++
+σ
+y
+y
+2
+σ= 
+σ 
+xx
+2
+​
+ +σ 
+yy
+2
+​
+ 
+​
+ 
+0.47
+
+Distractors
+Click to collapse
+Provide five distractors.
+None of the distractors can be the GTFA.
+Each distractor must be unique (i.e. do not duplicate any of the distractors).
+Every distractor should be plausible to a non-expert and dismissable by an expert. Distractors that are obviously wrong waste a slot and lower the difficulty.
+Lean on common reasoning errors: axis flips, miscounts off by one bin, plausible-sounding alternative explanations that fail on a specific detail.
+Anchor distractors to errors models tend to make. If you've already seen a model fail in a related task, mine that failure for distractor ideas.
+⚠️ Required note above the distractor list
+
+"Distractors (incorrect answers only). Note that in testing we provided the model all potential answers, including the GTFA."
+
+
+ Quality Bar & Common Pitfalls
+🎯 Hold the Bar — every task must satisfy:
+A peer in the same engineering discipline can answer the question from the image without seeing your solution.
+The step-by-step solution, read alone, justifies the GTFA from the image plus prompt.
+Each distractor maps to a specific plausible error.
+The model fails, and you can name the failure mode in one sentence.
+Image Description must be sufficient to answer the prompt without the image.
+Common Pitfalls
+1
+Writing the prompt as an explicit multiple-choice question
+Explicit multiple-choice prompts are disallowed. Do not present the responder with a list of terms, or a set of labelled images/panels, and ask them to pick one option. The prompt must ask for the answer directly, with a single canonical answer the responder has to derive from the image.
+
+"Which of these is the closest to the necessary bias resistance to ensure the correct truth relation for this logic gate? A) 10 V, B) 15 V, C) 20 V, D) 25 V."
+
+"Determine the minimum bias voltage necessary to ensure 90% adherence to the target truth table on average."
+
+2
+Asking a stacked question
+A prompt must ask a single question. Do not bundle two different questions into one — whether they are performed on the same image or across several images. If two distinct analyses are needed, split them into separate tasks.
+
+"Determine the maximum compressive stress and the deflection where the maximum compressive stress occurs."
+
+"Determine the deflection at the point of maximum compressive stress."
+
+3
+Writing a pure counting question
+Counting can be part of a task, but it cannot be the whole task. A prompt whose only demand is "how many X are visible" is disallowed — the count must feed a further judgement, classification, or quantitative conclusion the responder has to derive from the image.
+
+"How many pinned connections are present in the image?"
+
+"Determine the force and moment reactions at the leftmost pinned connection."
+
+4
+Mixing observation and interpretation in the early solution steps
+The opening steps should record what is visible. Keep interpretive claims out of them and place the reasoning in the later steps of the step-by-step solution.
+
+"It is clear from Image 1 that the flow resistance is dominated by the form drag of the large objects on the bed."
+
+"Image 1 indicates the presence of large objects on the channel bed."
+
+5
+Distractors an undergraduate would dismiss in five seconds
+Raise the floor on plausibility. Every distractor must be plausible to a non-expert and dismissable only by an expert. Anchor them to specific reasoning errors models actually make.
+
+6
+Skipping the calculation in the step-by-step
+Algebraic manipulations and arithmetic calculations must be shown explicitly. It is OK to motivate simple manipulations with words ("Squaring both sides of the equation, we obtain..."), but multistep manipulations must be shown explicitly.
+
+7
+Delivering a task the model got right
+We are building an adversarial set; passing tasks are not the deliverable. If you cannot make it fail, redesign the prompt to target a tighter failure mode, swap in a harder image, or retire the task.
+
+8
+External images that turn out to be license-restricted
+Licensing is the single most common reason a delivered task is rejected. Verify rights before authoring the task around the image. If you cannot find clear license info, treat it as All Rights Reserved and exclude.
+
+9
+Assuming open access means free to reuse
+Free reading access does not imply commercial reuse rights. Always verify the specific Creative Commons designation. Image license can also differ from paper license — check the figure caption.
+
+10
+Cropping out on-image critical annotations
+Preserve all axis labels, scale bars, color legends, etc. These are part of the visual reasoning that the task tests.
+
+Common Engineering and CS Pitfalls
+1
+Not specifying the number of significant figures in the final answer
+Numerical answers must be machine-verifiable. This requires that the format of the final answer you provide be directly comparable to the model output. The number of significant figures must therefore be specified.
+
+For example, if you provide an answer of 0.849 (to three significant figures), we want to compare directly to a model answer with three significant figures, rather than, e.g., 0.85 or 0.8 or 0.8492.
+
+2
+Not specifying the units of the final answer
+Units are ultimately arbitrary, and they therefore must be specified in the prompt, even if it seems obvious what units should be used for the final answer.
+
+For numerical answers, your prompt must end with the following statement: “The answer should be expressed in [UNITS]. Report your final answer as a [1, 2, or 3] significant figure number without units. Any intermediate calculations should be carried out to 6 significant figures. All unstated fundamental constants should be used to 4 significant figures.”
+
+Replace [UNITS] with the appropriate units for the final answer, and replace [1, 2, or 3] with the requested number of significant figures (no more than three).
+
+3
+Writing a prompt that is not image-dependent
+Figures cannot be mere illustrations. They must be indispensable to answer the prompt!
+
+4
+Requesting more than 2-3 significant figures in your final answer
+Requesting excessive precision in the final answer often leads to discrepancies due to intermediate truncation and numerical inaccuracies. Our goal is to test the reasoning of the model, not its ability to retain perfect numerical accuracy throughout a calculation.
+
+5
+Not specifying all approximations to be made or all numerical procedures to be used if there are reasonable alternatives
+If the model can reasonably make different assumptions or apply different numerical solution procedures to arrive at a final answer that disagrees only slightly from the one you've provided, you must provide the assumptions/procedures to be used.
+
+For example, if a few iterations of a numerical procedure are required to calculate the answer converged to the requested precision, and the model instead uses an approximation that leads to a slightly different answer, this creates ambiguity in the final answer and is not a valid reasoning error.
+
+You should specify that the answer should be fully converged to the requested precision and/or the numerical procedure to be used and the number of iterations (if applicable).
+
+6
+Not specifying all modeling assumptions
+If different modeling assumptions can reasonably be made to solve the problem, you must specify exactly which one to use.
+
+This issue is particularly common when semi-empirical or empirical relations must be used.
+
+7
+Requesting answers that require excessive numerical computation
+The model has no access to outside tools, so the problems you pose to the model must be reasonably solvable by hand with a non-programmable graphing calculator.
+
+Remember, calculation mistakes are not valid reasoning failures, so there is no point in posing numerically involved calculations to the model.
+
+It is acceptable if, e.g., the solution requires a few iterations of a numerical procedure or a few terms in a Fourier series to arrive at a numerically converged answer, but it should not go beyond what a human could reasonably do by hand.
+
+8
+Not specifying the numerical value of all material constants
+If you are requesting a numerical answer, the numerical value of every material constant used in the solution must be specified in your prompt.
+
+Example: "Take the density of water to be 
+ρ
+=
+998
+ kg
+/
+m
+3
+ρ=998 kg/m 
+3
+ ."
+
+9
+Not specifying the numerical value of all physical constants
+If you are requesting a numerical answer, the numerical value of every physical constant used in the solution (e.g., the acceleration due to gravity, Boltzmann's constant, the ideal gas constant, the elementary charge, ...) must be specified in your prompt.
+
+Example: "Take the acceleration due to gravity to be 
+g
+=
+9.81
+ m
+/
+s
+2
+g=9.81 m/s 
+2
+ ."
+
+10
+Not specifying the numerical value of all mathematical constants
+If you are requesting a numerical answer, the numerical value of every mathematical constant used in the solution must be specified.
+
+Example: "Take Euler's number to be 
+e
+=
+2.718
+e=2.718."
+
+11
+Not defining every variable that will appear in the final answer
+If you are requesting a symbolic final answer, every variable appearing in the final answer must be specified in the prompt.
+
+Example: If the final answer I am requesting has the form 
+I
+=
+G
+Δ
+V
+I=GΔV, I would add the following sentence to the prompt: "Provide an expression for the current 
+I
+I in terms of the conductance 
+G
+G and voltage difference 
+Δ
+V
+ΔV."
+
+Other common errors
+Not using KaTeX to format dimensioned quantities, variables, or pure numbers to be used for calculation in the prompt. KaTeX formatting is absolutely mandatory for our domain. See the "LaTeX & KaTeX Resources" page and the "Engineering and CS Specifics" section on the Writing the Prompt page for more information.
+Not using KaTeX to format dimensioned quantities, variables, or pure numbers to be used for calculation in the failure justification.
+Not using KaTeX to format dimensioned quantities, variables, or pure numbers to be used for calculation in the golden solution.
+Including references from December 31st 2025 or later. This is the knowledge cutoff for the model. Do not provide references published on or after December 31st 2025.
+Identifying responses as incorrect when the final answer is correct. A valid model failure requires both a valid reasoning error and an incorrect final answer. It does not matter how absurd the reasoning in the response is if the final answer is correct.
+Identifying responses as incorrect when the final answer is not sufficiently distinct from the correct answer. Incorrect final answers should be at least 2% different from the correct final answer. "Incorrect" answers within a few percent of the correct answer are not permissible, even if there is a reasoning error present. Usually, it is possible to obtain a sufficiently incorrect final answer by adjusting the parameters of the problem.
+Posing physically impossible problems. Ensure that what you describe in the prompt is physically possible. For example, don't request the maximum deflection in a beam using elastic, small-deflection analysis if the beam would have failed under the applied loading.
+Providing insufficient detail in the golden solution. It is never sufficient to only present equations — you must also explain each step in a few sentences, with enough detail that an expert in a nearby but adjacent field can follow it. For example, if you are using a particular model or framework, briefly explain why it applies in the context of your problem.
+Not retaining enough digits in intermediate calculations for the final answer to be correct to the specified precision. Your prompt must specify that all intermediate calculations be carried out to 6 significant figures, and your answer must be accurate based on that level of intermediate precision.
+Providing an insufficiently detailed failure justification.
+
+
+Below are three complete golden example tasks from the demo workbook, paired with their corresponding images.
+
+In the workflow you will be asked to provide the GTFA verbatim as the final step of your step-by-step solution.
+
+1
+Task 1: Soft Material Mechanics
+Reference images
+Two-panel plot: (a) normalized gel height versus time with a linear fit, (b) solute volume fraction profile versus depth at three times
+Image 1: Gel height evolution (a) and solute volume fraction profile (b)
+Prompt
+Consider a one dimensional system of gel and supernatant domain on top of the gel at room temperature. Gel is fixed at the bottom. The equilibrium height of the gel when submerged in the supernatant (without inclusion of any other chemical species) is 
+h
+e
+q
+=
+H
+=
+10.00
+ 
+μ
+m
+h 
+eq
+​
+ =H=10.00 μm. This state of the gel is defined as the reference equilibrium state and let 
+Z
+Z be the reference coordinate with 
+Z
+=
+0.00
+Z=0.00 being the bottom of the gel. Let 
+u
+(
+Z
+)
+u(Z) be the local deformation such that 
+h
+=
+1
++
+u
+(
+H
+)
+h=1+u(H) is the height of the gel. Let 
+τ
+=
+2.50
+ 
+s
+τ=2.50 s be the inherent relaxation timescale of the gel. The Young's modulus of the gel is 
+E
+=
+1.00
+×
+10
+5
+ 
+P
+a
+E=1.00×10 
+5
+  Pa. There is no fluid flux at the top and bottom of the combined gel-supernatant system. Now this hydrogel and supernatant system is subjected to solute with volume fraction 
+ϕ
+(
+0
+)
+ϕ 
+(0)
+ . The interactions between the solute and the gel polymer are purely steric repulsion and there are no other interactions present between them. The solute is fully permeable through the hydrogel and the supernatant boundary. Let 
+p
+(
+Z
+)
+p(Z) be the pore pressure of the hydrogel and 
+P
+(
+Z
+)
+P(Z) be the supernatant fluid pressure. Then what is the value of 
+p
+−
+P
+p−P at 
+Z
+/
+H
+=
+1
+Z/H=1 as 
+t
+→
+5.00
+τ
+t→5.00τ? Assume that the deformations are in the linear regime and the polymer volume fraction remains constant at 
+0.04
+0.04 throughout the evolution. The viscosity of the supernatant is 
+1.00
+×
+10
+−
+3
+ 
+P
+a
+⋅
+s
+1.00×10 
+−3
+  Pa⋅s. The answer should be expressed in Pascals. Report your final answer as a 3 significant figure number without units. Any intermediate calculations should be carried out to 6 significant figures. All unstated fundamental constants should be used to 4 significant figures. Take 
+k
+B
+T
+=
+4.11
+×
+10
+−
+21
+ 
+J
+k 
+B
+​
+ T=4.11×10 
+−21
+  J where 
+T
+T is the room temperature, 
+v
+c
+=
+1.00
+×
+10
+−
+29
+ 
+m
+3
+v 
+c
+​
+ =1.00×10 
+−29
+  m 
+3
+  is the molecular volume.
+
+Step-by-step solution
+Step 1 : Let 
+σ
+(
+Z
+)
+σ(Z) be the stress inside the hydrogel. Then for small linear deformations 
+σ
+(
+Z
+)
+=
+σ
+e
+l
+(
+Z
+)
++
+σ
+i
+n
+t
+(
+Z
+)
++
+σ
+e
+n
+t
+(
+Z
+)
+σ(Z)=σ 
+el
+​
+ (Z)+σ 
+int
+​
+ (Z)+σ 
+ent
+​
+ (Z).
+
+Step 2 : For linear deformations, the elastic contribution 
+σ
+e
+l
+(
+Z
+)
+=
+E
+∂
+u
+∂
+z
+−
+p
+σ 
+el
+​
+ (Z)=E 
+∂z
+∂u
+​
+ −p.
+
+Step 3 : The entropic contribution arises from the mixing entropy of the polymer chain with the solvent. 
+σ
+e
+n
+t
+(
+Z
+)
+=
+−
+k
+B
+T
+v
+c
+ϕ
+p
+2
+σ 
+ent
+​
+ (Z)=− 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+ ϕ 
+p
+2
+​
+ . This equivalent to osmotic pressure of the polymer. The solute 
+ϕ
+(
+0
+)
+ϕ 
+(0)
+  does not lead to any entropic contribution (osmpotic pressure in the traditional sense) since the it is fully permeable through the hydrogel.
+
+Step 4 : The stress contribution arising from the steric interactions between polymer and the solute is diffusiophoretic in nature in the presence of the gradient of 
+ϕ
+(
+0
+)
+ϕ 
+(0)
+ . Hence, 
+σ
+i
+n
+t
+(
+Z
+)
+=
+−
+k
+B
+T
+v
+c
+R
+2
+2
+k
+f
+ϕ
+(
+0
+)
+σ 
+int
+​
+ (Z)=− 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+  
+2k 
+f
+​
+ 
+R 
+2
+ 
+​
+ ϕ 
+(0)
+ . Here 
+R
+R is the exclusion radius and 
+k
+f
+k 
+f
+​
+  is the permeability of the hydrogel.
+
+Step 5 : Hence 
+σ
+(
+Z
+)
+=
+E
+∂
+u
+∂
+z
+−
+p
+−
+k
+B
+T
+v
+c
+ϕ
+p
+2
+−
+k
+B
+T
+v
+c
+R
+2
+2
+k
+f
+ϕ
+(
+0
+)
+σ(Z)=E 
+∂z
+∂u
+​
+ −p− 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+ ϕ 
+p
+2
+​
+ − 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+  
+2k 
+f
+​
+ 
+R 
+2
+ 
+​
+ ϕ 
+(0)
+ .
+
+Step 6 : The stress balance at the gel supernatant domain implies that
+
+σ
+(
+Z
+=
+1
+)
+=
+−
+P
+σ(Z=1)=−P.
+
+As well as equal chemical potential of the solvent imply that at 
+Z
+=
+H
+Z=H
+
+−
+p
+−
+k
+B
+T
+v
+c
+ϕ
+p
+2
+−
+k
+B
+T
+v
+c
+R
+2
+2
+k
+f
+ϕ
+(
+0
+)
+=
+−
+P
+−p− 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+ ϕ 
+p
+​
+  
+2
+ − 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+  
+2k 
+f
+​
+ 
+R 
+2
+ 
+​
+ ϕ 
+(0)
+ =−P.
+
+Hence, at 
+Z
+=
+H
+Z=H,
+
+P
+−
+p
+=
+k
+B
+T
+v
+c
+ϕ
+p
+2
++
+k
+B
+T
+v
+c
+R
+2
+2
+k
+f
+ϕ
+(
+0
+)
+P−p= 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+ ϕ 
+p
+​
+  
+2
+ + 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+  
+2k 
+f
+​
+ 
+R 
+2
+ 
+​
+ ϕ 
+(0)
+  [1].
+
+Step 7: Now we need to estimate 
+k
+f
+k 
+f
+​
+  and 
+R
+R from the given information. We estimate 
+k
+f
+k 
+f
+​
+  based on the given inherent relaxation time scale of the hydrogel. 
+τ
+=
+H
+2
+μ
+f
+k
+f
+E
+τ= 
+k 
+f
+​
+ E
+H 
+2
+ μ 
+f
+​
+ 
+​
+ . Substituting the values of relevant variables we obtain 
+k
+f
+=
+4
+×
+10
+−
+19
+m
+2
+k 
+f
+​
+ =4×10 
+−19
+ m 
+2
+ .
+
+Step 8:
+To estimate 
+R
+R, we evaluate initial instantaneous velocity 
+V
+r
+V 
+r
+​
+  of the hydrogel-supernatant boundary. From the linear fit provided in the subfigure (a), 
+V
+r
+=
+0.31
+H
+τ
+ 
+m
+/
+s
+V 
+r
+​
+ =0.31 
+τ
+H
+​
+  m/s.
+
+Step 9:
+In the no flux boundary conditions, the diffusiopheretic velocity of the polymer network is given by 
+V
+D
+P
+=
+−
+k
+B
+T
+R
+2
+2
+v
+c
+μ
+f
+∂
+ϕ
+(
+0
+)
+∂
+Z
+V 
+DP
+​
+ =− 
+2v 
+c
+​
+ μ 
+f
+​
+ 
+k 
+B
+​
+ TR 
+2
+ 
+​
+  
+∂Z
+∂ϕ 
+(0)
+ 
+​
+ .
+
+Step 10:
+The intial instantaneous velocity must be equal to diffusiophoretic velocity before the elastic restorative forces kick in. Hence
+V
+D
+P
+=
+V
+r
+V 
+DP
+​
+ =V 
+r
+​
+ .
+
+From step 8 and step 9
+
+−
+k
+B
+T
+R
+2
+2
+v
+c
+μ
+f
+∂
+ϕ
+(
+0
+)
+∂
+Z
+=
+0.31
+H
+τ
+− 
+2v 
+c
+​
+ μ 
+f
+​
+ 
+k 
+B
+​
+ TR 
+2
+ 
+​
+  
+∂Z
+∂ϕ 
+(0)
+ 
+​
+ =0.31 
+τ
+H
+​
+ 
+
+In the steady profile shown in subfigure (b), 
+∂
+ϕ
+(
+0
+)
+∂
+Z
+=
+−
+0.018
+21
+H
+∂Z
+∂ϕ 
+(0)
+ 
+​
+ =− 
+21H
+0.018
+​
+ . Substituting numerical values from the steps above and simplifying this relation further we get
+R
+=
+2.65325
+×
+10
+−
+10
+ 
+m
+R=2.65325×10 
+−10
+  m.
+
+Step 11:
+Since the 
+ϕ
+(
+0
+)
+ϕ 
+(0)
+  profile remains constant through out the evolution, we can obtain its value at 
+Z
+=
+H
+Z=H by interpolating values provided in the subfigure (b). 
+ϕ
+(
+0
+)
+(
+0
+)
+=
+0.018
+ϕ 
+(0)
+ (0)=0.018 and 
+ϕ
+(
+0
+)
+(
+21
+H
+)
+=
+0.00
+ϕ 
+(0)
+ (21H)=0.00.
+Hence 
+ϕ
+(
+0
+)
+(
+H
+)
+=
+0.0171429
+ϕ 
+(0)
+ (H)=0.0171429.
+
+Step 12:
+Finally substituting values for all the evaluated quantities in step 6, we obtain
+P
+−
+p
+=
+1.28
+×
+10
+6
+ 
+P
+a
+P−p=1.28×10 
+6
+  Pa.
+
+Final Answer: 
+1.28
+×
+10
+6
+1.28×10 
+6
+ 
+
+GTFA
+1.28
+×
+10
+6
+1.28×10 
+6
+ 
+
+Distractors
+A) 
+2.82
+×
+10
+5
+2.82×10 
+5
+ 
+B) 
+6.56
+×
+10
+5
+6.56×10 
+5
+ 
+C) 
+1.64
+×
+10
+7
+1.64×10 
+7
+ 
+D) 
+7.05
+×
+10
+6
+7.05×10 
+6
+ 
+E) 
+3.00
+×
+10
+3
+3.00×10 
+3
+ 
+
+Model answer
+2.82
+×
+10
+5
+2.82×10 
+5
+ 
+​
+ 
+
+Failure reason
+The model response incorrectly applies chemical potential continuity
+
+p
+−
+P
+=
+k
+B
+T
+v
+c
+ 
+ϕ
+p
+ 
+ϕ
+(
+0
+)
+p−P= 
+v 
+c
+​
+ 
+k 
+B
+​
+ T
+​
+ ϕ 
+p
+​
+ ϕ 
+(0)
+ 
+
+
+This equation ignores the both polymer entropic contribution and incorrectly calculates contribution from the steric interactions between polymer and the solute.
+
+Detailed image description
+Subfigure (a) shows the evolution of the height 
+h
+h of the hydrogel while Subfigure (b) shows the evolution of the 
+ϕ
+(
+0
+)
+ϕ 
+(0)
+  across the whole domain. Subfigure (a) also shows linear fit through first few data points. The equation of the linear fit is 
+h
+/
+H
+=
+0.31
+t
+/
+τ
++
+1.00
+h/H=0.31t/τ+1.00. The 
+ϕ
+(
+0
+)
+ϕ 
+(0)
+  profile remains linear with 
+ϕ
+(
+0
+)
+(
+0
+)
+=
+0.018
+ϕ 
+(0)
+ (0)=0.018 and 
+ϕ
+(
+0
+)
+(
+0
+)
+=
+0.00
+ϕ 
+(0)
+ (0)=0.00 throughout the evolution.
+
+2
+Task 2: Circuit Analysis
+Reference images
+Schematic of a BJT amplifier circuit with a JFET current source, biasing resistors R1, R2, R3, and coupling capacitors
+Image 1: Amplifier circuit schematic
+Prompt
+Look at the amplifier in the attached image. Determine the 
+V
+C
+E
+V 
+CE
+​
+  voltage of the BJT 
+Q
+1
+Q 
+1
+​
+  when 
+Q
+1
+Q 
+1
+​
+  is biased such that 
+I
+B
+=
+45.8
+ 
+μ
+A
+I 
+B
+​
+ =45.8μA. Assume the JFET 
+J
+1
+J 
+1
+​
+  operates in saturation.
+
+The following values are given:
+
+R
+1
+=
+100
+ 
+k
+Ω
+,
+R
+2
+=
+100
+ 
+k
+Ω
+,
+R
+3
+=
+500
+ 
+k
+Ω
+R 
+1
+​
+ =100kΩ,R 
+2
+​
+ =100kΩ,R 
+3
+​
+ =500kΩ
+
+
+Q
+1
+:
+ 
+β
+=
+200
+,
+V
+B
+E
+=
+0.6
+ 
+V
+,
+V
+A
+=
+100
+ 
+V
+Q 
+1
+​
+ : β=200,V 
+BE
+​
+ =0.6V,V 
+A
+​
+ =100V
+
+
+J
+1
+:
+ 
+I
+D
+S
+S
+=
+10
+ 
+m
+A
+,
+V
+P
+=
+3
+ 
+V
+,
+g
+D
+S
+=
+50
+ 
+μ
+S
+J 
+1
+​
+ : I 
+DSS
+​
+ =10mA,V 
+P
+​
+ =3V,g 
+DS
+​
+ =50μS
+
+
+V
+D
+D
+=
+15
+ 
+V
+,
+V
+S
+S
+=
+0
+V 
+DD
+​
+ =15V,V 
+SS
+​
+ =0
+
+Step-by-step solution
+GTFA
+Distractors
+Model answer
+Failure reason
+3
+Task 3: Beam Analysis
+Reference images
+a) Loaded beam with supports at B and D, a 20 kN point load and moment at A, a 40 kN load at C, and distributed loads of 10 kN/m and L; b) I-beam cross section, 100 mm by 100 mm with 15 mm flanges and web
+Image 1: a) Beam loading and boundary conditions with span dimensions; b) I-beam cross section with dimensions
+Prompt
+Figure a) shows a long beam along with its boundary conditions made up of some material with Youngs Modulus of 
+E
+=
+210
+E=210 GPa. The load is applied on points A,C while the boundary conditions are applied on B and D. Along with this, a moment is applied on A, and uniformly distributed loads are applied between BC and CD as shown in the figure a). Figure b) shows the cross section of the beam along with its dimensions. Define 
+x
+x as the distance from point A in the entire beam in meters. If the points of contraflexure of the beam in Figure a) are located at exactly 
+x
+=
+1
+x=1 and 
+x
+=
+3
+x=3, what is the deflection of the beam at positions 
+x
+=
+1
+,
+2
+,
+3
+,
+4
+,
+5
+,
+6
+x=1,2,3,4,5,6. Give your results in mm, truncating the value to 2 decimals as a set 
+(
+y
+1
+,
+y
+2
+,
+y
+3
+,
+y
+4
+,
+y
+5
+,
+y
+6
+)
+(y 
+1
+​
+ ,y 
+2
+​
+ ,y 
+3
+​
+ ,y 
+4
+​
+ ,y 
+5
+​
+ ,y 
+6
+​
+ ). Here 
+y
+i
+y 
+i
+​
+  is the deflection at position 
+x
+=
+i
+x=i.
+
+Step-by-step solution
+GTFA
+Distractors
+Model answer
+Failure reason
+📌 How to use these references
+Study the exact section order in each example: prompt, step-by-step solution, GTFA, distractors, model answer, and failure reason.
+Keep the early steps observation-only, then move the interpretation into the later steps of the solution.
+Make the final answer explicit and keep the failure reason tightly tied to the model’s specific mistake.
+
+
+📚 Helpful Resources
+Last updated: Sep 2, 2026 · External references for sourcing images and authoring tasks
+
+These are optional aids, not a substitute for the instructions. Your own lab images remain the strongly preferred source — use the links below when you need a license-clean external image or a quick refresher on nomenclature, grading criteria, or occupation codes.
+
+Open image repositories
+Searchable sources of license-clean laboratory and clinical imagery.
+
+BioImage Archive (EMBL-EBI)
+Deposited biological imaging datasets; check each study's license.
+
+Figshare
+General research data repository; filter for CC BY / CC0 items.
+
+Harvard Dataverse
+Datasets with per-deposit licensing; confirm terms before use.
+
+Image Data Resource (IDR)
+Published microscopy screens and imaging studies.
+
+PIDAR datasets (HPC4AI, Torino)
+Pathology image datasets index.
+
+Kaggle: chromosome image dataset (karyotype)
+Karyotype images for cytogenetics tasks; verify the dataset license.
+
+NIH Open-i
+Biomedical figures from PubMed Central; filter by license.
+
+PubMed Central (Open Access subset)
+Peer-reviewed articles with CC BY / CC0 figures.
+
+Wikimedia Commons
+Check the per-file license — many are CC BY-SA or CC0.
+
+The Cancer Imaging Archive (TCIA)
+De-identified pathology and radiology collections.
+
+Open Access Journals
+Figures from open-access articles — always check the per-article license before use.
+
+PLoS
+Most content is CC BY.
+
+Frontiers
+Open-access articles across life sciences.
+
+MDPI
+Open-access journals; confirm the license line on each article.
+
+eLife
+Life-science research, typically CC BY.
+
+Nature (open access)
+Only the open-access articles; subscription content is not usable.
+
+Licensing references
+Use these to confirm an image is usable before building a task around it.
+
+Creative Commons license chooser & summaries
+What each CC license permits. NC and ND are not usable.
+
+CC0 public domain dedication
+Always acceptable; still record the source URL.
+
+Domain background
+Refreshers for the subject areas in scope.
+
+O*NET OnLine occupation search
+Look up the exact occupation title and SOC code for the Profession field.
+
+ISCN karyotype nomenclature overview
+Standard notation for cytogenetics answers.
+
+WHO / CAP grading & staging criteria
+Use published criteria when a prompt asks for a graded call.
+
+Reminder: BioRender figures are a hard block, and CC BY-NC / CC BY-ND material is never usable — regardless of where you found it.
+
+
+gineering and CS)
+
+⚙️
+Engineering and CS
+🔍 Reviewing Guidelines
+As a reviewer, you are responsible for maintaining the quality of the tasks that move through the pipeline. Use the knowledge you have as an expert and proficient tasker to identify issues in tasks and provide constructive feedback to fix them.
+
+📋 Claiming Reviews
+There is no reviewer claim sheet in this project. You can go to the Handshake AI dashboard → Project Lumiere → Available Tasks → set Stage to "Awaiting Review (Review 1)". This will show the tasks in the R1 layer that you can claim to review.
+📝 How to Give Feedback
+Read through the task, then select the Add feedback icon on the relevant section and choose Major Issue, Minor Issue, Praise, or General Feedback.
+Write constructive feedback — copy the relevant error from the Error Classifications below, point to where it occurs in the task, and suggest how to correct it.
+If a minor error can be fixed in under 25 minutes and you're confident in the area, fix it yourself. Otherwise, send it back with feedback. When you fix a minor error to pass the task, leave a general comment noting what was corrected.
+Provide praise on good tasks.
+Select an appropriate quality score (1–5) for the task (see the rubric below).
+To approve, the task must have no major or minor errors.
+Feedback panel showing Major Issue, Minor Issue, Praise, and General Feedback options
+Selecting a feedback type on a task.
+⭐ Quality Score Rubric
+Every reviewed task receives a quality score from 1 to 5. A score of 3 or above is passing.
+
+Score
+Verdict
+Criteria
+5
+Pass — Excellent
+No major errors and no minor errors. Task is delivery-ready with no fixes required.
+4
+Pass — Good
+No major errors and 1–2 minor errors. Small corrections needed but the task is fundamentally sound.
+3
+Pass — Acceptable
+No major errors and 3–4 minor errors. Passing threshold; requires fixes before delivery.
+2
+Fail
+Contains a major error, OR more than 4 minor errors. Cannot pass — send back with feedback.
+1
+Fail — Flag
+No effort or 3+ major errors. Very rare — flag immediately to a team lead.
+⚠️ Error Classifications
+Click on the error tag to copy it and paste on the feedback.
+
+🚫
+Major Errors
+Prompt - multiple answersPrompt has multiple correct answers
+Prompt - invalidPrompt is incorrect or not suitable (asking for something impossible or not valid)
+Image - no/invalid sourceNo or invalid image source for images extracted from online
+Answer - incorrectIncorrect final answer
+Answer - ambiguousFinal answer is not a single unambiguous answer
+Answer - longFinal answer is a long sentence
+Image - unclearUnclear image
+Image - formatIncorrect image format (not PNG or JPEG)
+Image - editedHeavily post-processed image (obvious color saturation due to editing or photographic manipulation)
+License - invalidInvalid license type - This only applies for images obtained from online - DO NOT MARK MAJOR ERROR for user's own images.
+Model - invalid failureInvalid model failure
+Task - wrong subtypeIncorrect task subtype
+Model - few failuresNot enough model failures
+OtherOther
+⚠️
+Minor Errors
+Model - justificationModel failure justification is incorrect or missing - Both general justification of multiple model failures or justification of a single model failure is accepted.
+Solution - partialStep-by-step solution has partial or incorrect steps
+Distractors - mismatchedDistractors are mismatched and do not align with the guidelines
+Answer - formatAnswer format (integer, decimal, etc.) or the number of decimal places selected is inaccurate
+GrammarPoor grammar, spelling, or typos
+OtherOther
+📌 Special Cases
+Typos and grammatical errors in the prompt — Only send back tasks for this issue if the errors alter the meaning of the prompt and can lead to incorrect answers, or if there are a significant number of typos and grammatical errors that make the prompt look very poor quality.
+Stacked questions — If a prompt asks multiple questions that require compounded answers, it is considered a stacked question and is not allowed (e.g., "What is the antibiotic-resistant organism in the left plate, and what is the gram-positive bacterium in the middle plate?"). A prompt must ask a single question with a single unambiguous answer. When in doubt, ask in the #lumiere-reviewer channel.
+✅ Submission Checklist
+0 / 18 checked
+
+Task Structure
+0 / 4
+
+Licensing
+0 / 6
+
+Prompt, Solution, GTFA & Distractors
+0 / 5
+
+Model Testing
+0 / 3
+
+
+Cheat sheet
+Quick Reference: What To Do
+Situation
+Action
+Minor step-by-step wording is the only issue
+→ Fix it yourself and pass
+Multiple issues in the task
+→ Send back with all feedback
+Wrong supertype/subtype
+→ Send back immediately
+Wrong image format (not JPEG/PNG)
+→ Send back
+Stacked question (multiple independent answers)
+→ Send back — major error
+Fewer than 6 plausible answers
+→ Send back — major error
+Ambiguous answer
+→ Flag for discussion, likely send back
+Task stuck in review hell
+→ DM the fellow directly
+
+→ Flag in channel for second opinion
+Need a fellow's name
+→ Tag @Vanshika with task ID

@@ -7,8 +7,14 @@ wheels/
 *.egg-info
 
 # Virtual environments
-.venv
+.venv/
 .browser_data/
 .env
+*.env
 instances.py
+openrouter_keys.txt
+*keys*.txt
+*.caption_cache.json
+.pytest_cache/
+.ruff_cache/
 *.png

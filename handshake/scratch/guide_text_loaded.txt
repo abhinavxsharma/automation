@@ -1,0 +1,73 @@
+🕯️
+Project Lumiere (Engineering and CS)
+Search…
+⌘K
+Handshake AI
+Home
+Announcements
+Onboarding Meeting
+Ground Rules
+Video Walkthroughs
+ONBOARDING
+Handshake AI Platform
+TASKING
+Understand the Tasking Pipeline
+Multimodal Task
+Overview & Lifecycle
+Task Submission Checklist
+Images to Use
+Writing Prompts
+Common Issues & Pitfalls
+Golden Examples
+Helpful Resources
+LaTeX & KaTeX Resources
+Reviewing
+TEAM & ADMIN
+Project Leadership
+Communication
+Pay & Tracker Tasks
+FAQs
+Collapse
+🕯️
+Project Lumiere (Engineering and CS)
+⚙️
+Engineering and CS
+Welcome to Project Lumiere
+
+Making complex multimodal reasoning tasks for chemistry and materials science.
+
+🚨 Joining Slack (after onboarding) is required
+
+All project updates, instructions, and time-sensitive announcements are shared through Slack. If you've finished onboarding but haven't joined Slack yet, check your email inbox for an invite and join immediately. You will miss essential information without it. You will be able to post replies only to the daily threads in the tasking channel.
+
+👋 Welcome from the Project Lead
+
+"Hello! This is Thanuka (TK), I am the project lead for Lumiere. I have been with Handshake for about a year and have a background in organic chemistry, DNA/RNA chemistry, molecular biology, and drug discovery. I hope that Project Lumiere can be a space where we can all collaborate and shape the next generation of AI as a team."
+
+✨ What We Do
+
+We build multimodal biological research evaluations that test and improve models' ability to visually interpret and reason about slides and specimens in the field of Histopathology, Cytology, Hematology, Molecular imaging, Agricultural microbiology, and more. A core design principle is realism: our images include artifacts, contamination, signal Vs noise, and failed experiments that experienced researchers recognize immediately.
+
+Fellows produce two deliverable formats per assay type: Visual Question Answering (VQA) pairs with multiple-choice distractors, and comprehensive text descriptions covering modality, quality, and visible artifacts.
+
+⚡
+Quality with Efficiency
+
+Maintain professional standards with high scientific rigor, precise grammar, and clean formatting. Be thorough but stay mindful of your pace.
+
+🌱
+A Growth Mindset
+
+Feedback is a gift that helps us maintain our high-quality bar! If a reviewer reaches out with suggestions, remember they have the same goals as you.
+
+✨
+Team First
+
+Look out for one another. This is a team effort, and we're at our best when we're supporting each other.
+
+Project end date:
+23rd October
+Duration:
+6-7 weeks
+Lumiere Calendar
+Slack

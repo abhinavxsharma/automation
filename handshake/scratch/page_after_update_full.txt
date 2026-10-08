@@ -1,0 +1,95 @@
+Project Lumière (Engineering)
+/
+Regular · 1520c7f4-d41f-440b-b341-e7c6bc96166c
+Changes saved
+Save
+Exit
+
+What is the subdomain of your task?
+
+Algorithms and Complexity
+
+Where did the image(s) for this task come from?
+
+Original — internal lab image
+
+Paste the source URL or DOI link for the published article the image came from. Prefer the DOI to the published version where available. Leave as "N/A" for original lab images.
+
+N/A
+
+Select the license that governs the image. For external images this must be CC BY (2.0/3.0/4.0), CC BY-SA, or CC0. CC BY-NC, CC BY-ND, CC BY-NC-ND, and "All Rights Reserved" are not usable on this project. Do not use figures created with BioRender.
+
+Original — internal lab image
+
+Reference material
+
+The full title of the article, chapter, or reference the task's underlying material comes from.
+
+Leave as "N/A" if the task is not based on published reference material.
+
+This is about the article the image(s) came from.
+
+N/A
+
+Where the reference was published — the journal, book publisher, preprint server, or repository. Include volume, issue, and year if you have them.
+
+Leave as "N/A" if there is no published source.
+
+This is about the article the image(s) came from.
+
+N/A
+
+The license the reference material is published under, as stated by the publisher. Record what it actually says — this field describes the article you consulted, and is separate from the License type block above, which governs whether the image itself may be reused.
+
+Leave as "N/A" if there is no published source.
+
+This is about the article the image(s) came from.
+
+N/A
+
+Create a clear, unambiguous prompt that:
+Can be only solved in conjunction with the image
+Requires domain expertise
+Has exactly one verifiable answer
+You can upload single image or multiple images. Images with multiple panels are allowed. Images should not have any annotation or post-processing
+
+Note: platform renders Markdown for text and KaTeX for math
+
+Enter your prompt:
+
+The figure shows a directed communication network where data packets are routed from source node 
+𝑆
+S to destination sink node 
+𝑇
+T through intermediate relay nodes. Each directed link 
+(
+𝑢
+,
+𝑣
+)
+(u,v) has an associated transmission capacity 
+𝑐
+(
+𝑢
+,
+𝑣
+)
+c(u,v) in Mbps as labeled on the corresponding arrow in the diagram. Using the Max-Flow Min-Cut theorem, determine the maximum steady-state data throughput from 
+𝑆
+S to 
+𝑇
+T. The answer should be expressed in Mbps. Report your final answer as a 2 significant figure number without units. Any intermediate calculations should be carried out to 6 significant figures. All unstated fundamental constants should be used to 4 significant figures.
+
+PNG
+
+These statements must all be true in order for your task to be approved.
+
+I've double checked my spelling and grammar., My prompt is not duplicative, plagiarized, or LLM-generated., My prompt is self-contained: it is unambiguous and fully solvable without external resources or internet access., The prompt can only be solved with the information in the image
+
+You'll now see 2 model responses in 2 separate blocks
+
+Generation may take about 15-45 minutes.
+
+Block 1 Responses:
+
+Generating response

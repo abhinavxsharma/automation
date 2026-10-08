@@ -1,0 +1,19 @@
+Feedback
+All
+Needs attention
+Prompt ambiguous
+Wageesha
+50m
+The Science Judge flagged the prompt as ambiguous and the flag hasn't been addressed. Please either revise the prompt or add a justification explaining why the flag doesn't apply, rather than leaving the field as "N/A."
+Major issue
+Wageesha
+53m
+As flagged by science judge, the image description is under the 200-word minimum required by the task guidelines. Please expand it before resubmitting.
+Major issue
+Wageesha
+1h
+The Science Judge flag is unresolved. Please either fix the issue or write a justification explaining why the flag is incorrect, rather than leaving the field as "N/A."
+
+0 / 3 items addressed
+
+Start

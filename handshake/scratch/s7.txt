@@ -1,0 +1,37 @@
+Enter your prompt:
+
+The figure shows a task-dependency directed acyclic graph (DAG) representing a parallel computation pipeline. Tasks are nodes 
+𝑆
+,
+𝐴
+,
+𝐵
+,
+𝐶
+,
+𝐷
+,
+𝐸
+,
+𝐹
+,
+𝑇
+S,A,B,C,D,E,F,T, where 
+𝑆
+S is entry and 
+𝑇
+T is terminal. Directed edges 
+(
+𝑢
+,
+𝑣
+)
+(u,v) represent precedence with latency in milliseconds (
+ms
+ms). Assuming tasks start immediately once all predecessors complete, determine the critical path duration (maximum latency from 
+𝑆
+S to 
+𝑇
+T). Answer in ms as a 2 significant figure number without units. Intermediate calculations to 6 significant figures. Unstated constants to 4 significant figures.
+
+PNG

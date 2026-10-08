@@ -1,0 +1,20 @@
+A high-resolution, vector-style directed acyclic graph (DAG) representing a task-dependency computation pipeline on a clean white background. The graph consists of 8 circular tasks/nodes labeled with bold dark-navy capital letters: source node S on the far left at coordinates (0.0, 2.0); upper intermediate nodes A at (1.8, 3.6), C at (3.4, 2.9), and E at (5.0, 2.7); lower intermediate nodes B at (1.8, 0.4), D at (3.4, 1.0), and F at (5.0, 0.9); and terminal sink node T on the far right at (6.6, 2.0). Each node is rendered as a cream-colored circle with a prominent dark-slate border and centered text.
+
+There are 15 directed precedence edges depicted as dark-navy arrows pointing from predecessor to successor nodes. Each edge carries a distinct numerical latency badge enclosed in a white rounded rectangle with a dark-navy border and bold red text, positioned directly along the edge trajectory:
+1. Edge from S to A with latency badge 14 ms.
+2. Edge from S to B with latency badge 18 ms.
+3. Edge from S to C with latency badge 11 ms, situated near node S.
+4. Edge from A to C with latency badge 9 ms.
+5. Edge from A to D with latency badge 22 ms, positioned near node A.
+6. Edge from B to D with latency badge 15 ms, positioned near node B.
+7. Edge from B to E with latency badge 26 ms, positioned near node B.
+8. Edge from C to E with latency badge 17 ms.
+9. Edge from C to F with latency badge 21 ms, positioned near node C.
+10. Edge from D to E with latency badge 12 ms, positioned near node D.
+11. Edge from D to F with latency badge 19 ms.
+12. Edge from D to T with latency badge 28 ms, positioned near node D.
+13. Edge from E to F with latency badge 8 ms, directed downward.
+14. Edge from E to T with latency badge 24 ms.
+15. Edge from F to T with latency badge 20 ms.
+
+The graph contains several planar edge crossings: (S, C) crosses (A, D); (B, E) crosses (A, D); (B, E) and (D, E) cross (C, F); and (D, T) crosses (E, F). All latency badges are centered directly on their respective edge lines in unobstructed intervals, avoiding all crossing intersections and eliminating binding ambiguities. All edges flow strictly from left to right, ensuring no cycles exist.

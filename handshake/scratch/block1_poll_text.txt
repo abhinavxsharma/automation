@@ -1,0 +1,740 @@
+Project Lumière (Engineering)
+/
+Regular · 1520c7f4-d41f-440b-b341-e7c6bc96166c
+00:33:15
+/
+04:00:00
+Changes saved
+Save
+Exit
+
+What is the subdomain of your task?
+
+Algorithms and Complexity
+
+Where did the image(s) for this task come from?
+
+Original — internal lab image
+
+Paste the source URL or DOI link for the published article the image came from. Prefer the DOI to the published version where available. Leave as "N/A" for original lab images.
+
+N/A
+
+Select the license that governs the image. For external images this must be CC BY (2.0/3.0/4.0), CC BY-SA, or CC0. CC BY-NC, CC BY-ND, CC BY-NC-ND, and "All Rights Reserved" are not usable on this project. Do not use figures created with BioRender.
+
+Original — internal lab image
+
+Reference material
+
+The full title of the article, chapter, or reference the task's underlying material comes from.
+
+Leave as "N/A" if the task is not based on published reference material.
+
+This is about the article the image(s) came from.
+
+N/A
+
+Where the reference was published — the journal, book publisher, preprint server, or repository. Include volume, issue, and year if you have them.
+
+Leave as "N/A" if there is no published source.
+
+This is about the article the image(s) came from.
+
+N/A
+
+The license the reference material is published under, as stated by the publisher. Record what it actually says — this field describes the article you consulted, and is separate from the License type block above, which governs whether the image itself may be reused.
+
+Leave as "N/A" if there is no published source.
+
+This is about the article the image(s) came from.
+
+N/A
+
+Create a clear, unambiguous prompt that:
+Can be only solved in conjunction with the image
+Requires domain expertise
+Has exactly one verifiable answer
+You can upload single image or multiple images. Images with multiple panels are allowed. Images should not have any annotation or post-processing
+
+Note: platform renders Markdown for text and KaTeX for math
+
+Enter your prompt:
+
+The figure shows a task-dependency directed acyclic graph (DAG) representing a parallel computation pipeline. Tasks are nodes 
+𝑆
+,
+𝐴
+,
+𝐵
+,
+𝐶
+,
+𝐷
+,
+𝐸
+,
+𝐹
+,
+𝑇
+S,A,B,C,D,E,F,T, where 
+𝑆
+S is entry and 
+𝑇
+T is terminal. Directed edges 
+(
+𝑢
+,
+𝑣
+)
+(u,v) represent precedence with latency in milliseconds (
+ms
+ms). Assuming tasks start immediately once all predecessors complete, determine the critical path duration (maximum latency from 
+𝑆
+S to 
+𝑇
+T). Answer in ms as a 2 significant figure number without units. Intermediate calculations to 6 significant figures. Unstated constants to 4 significant figures.
+
+PNG
+
+These statements must all be true in order for your task to be approved.
+
+I've double checked my spelling and grammar., My prompt is not duplicative, plagiarized, or LLM-generated., My prompt is self-contained: it is unambiguous and fully solvable without external resources or internet access., The prompt can only be solved with the information in the image
+
+You'll now see 2 model responses in 2 separate blocks
+
+Generation may take about 15-45 minutes.
+
+Block 1 Responses:
+
+To find the critical path duration of the parallel computation pipeline, we identify all the nodes, directed edges, and their corresponding latency weights (in 
+ms
+ms) from the given task-dependency directed acyclic graph (DAG).
+
+Step 1: Identification of Nodes and Directed Edges
+
+The graph contains 8 nodes: 
+𝑆
+,
+𝐴
+,
+𝐵
+,
+𝐶
+,
+𝐷
+,
+𝐸
+,
+𝐹
+,
+𝑇
+S,A,B,C,D,E,F,T, where 
+𝑆
+S is the entry node and 
+𝑇
+T is the terminal node.
+
+Examining the edges and their weights from the figure:
+
+From entry node 
+𝑆
+S:
+
+(
+𝑆
+,
+𝐴
+)
+=
+14
+(S,A)=14
+(
+𝑆
+,
+𝐵
+)
+=
+18
+(S,B)=18
+(
+𝑆
+,
+𝐶
+)
+=
+11
+(S,C)=11
+
+From node 
+𝐴
+A:
+
+(
+𝐴
+,
+𝐶
+)
+=
+9
+(A,C)=9
+(
+𝐴
+,
+𝐷
+)
+=
+22
+(A,D)=22
+
+From node 
+𝐵
+B:
+
+(
+𝐵
+,
+𝐷
+)
+=
+15
+(B,D)=15
+(
+𝐵
+,
+𝐸
+)
+=
+26
+(B,E)=26
+
+From node 
+𝐶
+C:
+
+(
+𝐶
+,
+𝐸
+)
+=
+17
+(C,E)=17
+(
+𝐶
+,
+𝐹
+)
+=
+12
+(C,F)=12
+
+From node 
+𝐷
+D:
+
+(
+𝐷
+,
+𝐸
+)
+=
+21
+(D,E)=21
+(
+𝐷
+,
+𝐹
+)
+=
+19
+(D,F)=19
+(
+𝐷
+,
+𝑇
+)
+=
+28
+(D,T)=28
+
+From node 
+𝐸
+E:
+
+(
+𝐸
+,
+𝐹
+)
+=
+8
+(E,F)=8
+(
+𝐸
+,
+𝑇
+)
+=
+24
+(E,T)=24
+
+From node 
+𝐹
+F:
+
+(
+𝐹
+,
+𝑇
+)
+=
+20
+(F,T)=20
+Step 2: Dynamic Programming for the Longest Path (Critical Path)
+
+A topological ordering of the DAG is: 
+𝑆
+,
+𝐴
+,
+𝐵
+,
+𝐶
+,
+𝐷
+,
+𝐸
+,
+𝐹
+,
+𝑇
+S,A,B,C,D,E,F,T
+
+We compute the maximum latency 
+𝐿
+(
+𝑣
+)
+L(v) from source 
+𝑆
+S to each node 
+𝑣
+v:
+
+Node 
+𝑆
+S: 
+𝐿
+(
+𝑆
+)
+=
+0
+L(S)=0
+
+Node 
+𝐴
+A: 
+𝐿
+(
+𝐴
+)
+=
+𝐿
+(
+𝑆
+)
++
+14
+=
+14
+L(A)=L(S)+14=14
+
+Node 
+𝐵
+B: 
+𝐿
+(
+𝐵
+)
+=
+𝐿
+(
+𝑆
+)
++
+18
+=
+18
+L(B)=L(S)+18=18
+
+Node 
+𝐶
+C: 
+𝐿
+(
+𝐶
+)
+=
+max
+⁡
+(
+𝐿
+(
+𝑆
+)
++
+11
+,
+ 
+𝐿
+(
+𝐴
+)
++
+9
+)
+=
+max
+⁡
+(
+0
++
+11
+,
+ 
+14
++
+9
+)
+=
+max
+⁡
+(
+11
+,
+23
+)
+=
+23
+L(C)=max(L(S)+11,L(A)+9)=max(0+11,14+9)=max(11,23)=23
+
+Node 
+𝐷
+D: 
+𝐿
+(
+𝐷
+)
+=
+max
+⁡
+(
+𝐿
+(
+𝐴
+)
++
+22
+,
+ 
+𝐿
+(
+𝐵
+)
++
+15
+)
+=
+max
+⁡
+(
+14
++
+22
+,
+ 
+18
++
+15
+)
+=
+max
+⁡
+(
+36
+,
+33
+)
+=
+36
+L(D)=max(L(A)+22,L(B)+15)=max(14+22,18+15)=max(36,33)=36
+
+Node 
+𝐸
+E: 
+𝐿
+(
+𝐸
+)
+=
+max
+⁡
+(
+𝐿
+(
+𝐵
+)
++
+26
+,
+ 
+𝐿
+(
+𝐶
+)
++
+17
+,
+ 
+𝐿
+(
+𝐷
+)
++
+21
+)
+L(E)=max(L(B)+26,L(C)+17,L(D)+21) 
+𝐿
+(
+𝐸
+)
+=
+max
+⁡
+(
+18
++
+26
+,
+ 
+23
++
+17
+,
+ 
+36
++
+21
+)
+=
+max
+⁡
+(
+44
+,
+40
+,
+57
+)
+=
+57
+L(E)=max(18+26,23+17,36+21)=max(44,40,57)=57
+
+Node 
+𝐹
+F: 
+𝐿
+(
+𝐹
+)
+=
+max
+⁡
+(
+𝐿
+(
+𝐶
+)
++
+12
+,
+ 
+𝐿
+(
+𝐷
+)
++
+19
+,
+ 
+𝐿
+(
+𝐸
+)
++
+8
+)
+L(F)=max(L(C)+12,L(D)+19,L(E)+8) 
+𝐿
+(
+𝐹
+)
+=
+max
+⁡
+(
+23
++
+12
+,
+ 
+36
++
+19
+,
+ 
+57
++
+8
+)
+=
+max
+⁡
+(
+35
+,
+55
+,
+65
+)
+=
+65
+L(F)=max(23+12,36+19,57+8)=max(35,55,65)=65
+
+Node 
+𝑇
+T: 
+𝐿
+(
+𝑇
+)
+=
+max
+⁡
+(
+𝐿
+(
+𝐷
+)
++
+28
+,
+ 
+𝐿
+(
+𝐸
+)
++
+24
+,
+ 
+𝐿
+(
+𝐹
+)
++
+20
+)
+L(T)=max(L(D)+28,L(E)+24,L(F)+20) 
+𝐿
+(
+𝑇
+)
+=
+max
+⁡
+(
+36
++
+28
+,
+ 
+57
++
+24
+,
+ 
+65
++
+20
+)
+=
+max
+⁡
+(
+64
+,
+81
+,
+85
+)
+=
+85
+L(T)=max(36+28,57+24,65+20)=max(64,81,85)=85
+
+Step 3: Critical Path Verification
+
+The critical path from 
+𝑆
+S to 
+𝑇
+T is: 
+𝑆
+⟶
+𝐴
+⟶
+𝐷
+⟶
+𝐸
+⟶
+𝐹
+⟶
+𝑇
+S⟶A⟶D⟶E⟶F⟶T
+
+Summing the latency along this path: 
+14
++
+22
++
+21
++
+8
++
+20
+=
+85
+14+22+21+8+20=85
+
+Expressed to 2 significant figures without units, the result is 
+85
+85.
+
+\boxed{85}
+
+The next response is now being generated.
+
+Generation may take about 15-45 minutes.
+
+Block 2 Responses:
+
+Generating response
+3:26:45
+remaining
+Timer can be paused and resumed anytime
+Clock keeps running if you switch tabs
+Overtime is unpaid, tasking standards are still expected
+Logged time is editable after submitting
+Start timer
+Exit task

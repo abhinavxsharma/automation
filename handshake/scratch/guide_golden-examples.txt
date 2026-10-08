@@ -1,0 +1,1443 @@
+🕯️
+Project Lumiere (Engineering and CS)
+Search…
+⌘K
+Handshake AI
+Home
+Announcements
+Onboarding Meeting
+Ground Rules
+Video Walkthroughs
+ONBOARDING
+Handshake AI Platform
+TASKING
+Understand the Tasking Pipeline
+Multimodal Task
+Overview & Lifecycle
+Task Submission Checklist
+Images to Use
+Writing Prompts
+Common Issues & Pitfalls
+Golden Examples
+Task 1: Soft Material Mechanics
+Task 2: Circuit Analysis
+Task 3: Beam Analysis
+📌 How to use these references
+Helpful Resources
+LaTeX & KaTeX Resources
+Reviewing
+TEAM & ADMIN
+Project Leadership
+Communication
+Pay & Tracker Tasks
+FAQs
+Collapse
+🕯️
+Project Lumiere (Engineering and CS)
+⚙️
+Engineering and CS
+🥇 Golden Examples
+
+Below are three complete golden example tasks from the demo workbook, paired with their corresponding images.
+
+In the workflow you will be asked to provide the GTFA verbatim as the final step of your step-by-step solution.
+
+1
+Task 1: Soft Material Mechanics
+Reference images
+Image 1: Gel height evolution (a) and solute volume fraction profile (b)
+Prompt
+
+Consider a one dimensional system of gel and supernatant domain on top of the gel at room temperature. Gel is fixed at the bottom. The equilibrium height of the gel when submerged in the supernatant (without inclusion of any other chemical species) is 
+ℎ
+𝑒
+𝑞
+=
+𝐻
+=
+10.00
+ 
+𝜇
+m
+h
+eq
+	​
+
+=H=10.00 μm. This state of the gel is defined as the reference equilibrium state and let 
+𝑍
+Z be the reference coordinate with 
+𝑍
+=
+0.00
+Z=0.00 being the bottom of the gel. Let 
+𝑢
+(
+𝑍
+)
+u(Z) be the local deformation such that 
+ℎ
+=
+1
++
+𝑢
+(
+𝐻
+)
+h=1+u(H) is the height of the gel. Let 
+𝜏
+=
+2.50
+ 
+s
+τ=2.50 s be the inherent relaxation timescale of the gel. The Young's modulus of the gel is 
+𝐸
+=
+1.00
+×
+10
+5
+ 
+P
+a
+E=1.00×10
+5
+ Pa. There is no fluid flux at the top and bottom of the combined gel-supernatant system. Now this hydrogel and supernatant system is subjected to solute with volume fraction 
+𝜙
+(
+0
+)
+ϕ
+(0)
+. The interactions between the solute and the gel polymer are purely steric repulsion and there are no other interactions present between them. The solute is fully permeable through the hydrogel and the supernatant boundary. Let 
+𝑝
+(
+𝑍
+)
+p(Z) be the pore pressure of the hydrogel and 
+𝑃
+(
+𝑍
+)
+P(Z) be the supernatant fluid pressure. Then what is the value of 
+𝑝
+−
+𝑃
+p−P at 
+𝑍
+/
+𝐻
+=
+1
+Z/H=1 as 
+𝑡
+→
+5.00
+𝜏
+t→5.00τ? Assume that the deformations are in the linear regime and the polymer volume fraction remains constant at 
+0.04
+0.04 throughout the evolution. The viscosity of the supernatant is 
+1.00
+×
+10
+−
+3
+ 
+P
+a
+⋅
+s
+1.00×10
+−3
+ Pa⋅s. The answer should be expressed in Pascals. Report your final answer as a 3 significant figure number without units. Any intermediate calculations should be carried out to 6 significant figures. All unstated fundamental constants should be used to 4 significant figures. Take 
+𝑘
+𝐵
+𝑇
+=
+4.11
+×
+10
+−
+21
+ 
+J
+k
+B
+	​
+
+T=4.11×10
+−21
+ J where 
+𝑇
+T is the room temperature, 
+𝑣
+𝑐
+=
+1.00
+×
+10
+−
+29
+ 
+m
+3
+v
+c
+	​
+
+=1.00×10
+−29
+ m
+3
+ is the molecular volume.
+
+Step-by-step solution
+
+Step 1 : Let 
+𝜎
+(
+𝑍
+)
+σ(Z) be the stress inside the hydrogel. Then for small linear deformations 
+𝜎
+(
+𝑍
+)
+=
+𝜎
+𝑒
+𝑙
+(
+𝑍
+)
++
+𝜎
+𝑖
+𝑛
+𝑡
+(
+𝑍
+)
++
+𝜎
+𝑒
+𝑛
+𝑡
+(
+𝑍
+)
+σ(Z)=σ
+el
+	​
+
+(Z)+σ
+int
+	​
+
+(Z)+σ
+ent
+	​
+
+(Z).
+
+Step 2 : For linear deformations, the elastic contribution 
+𝜎
+𝑒
+𝑙
+(
+𝑍
+)
+=
+𝐸
+∂
+𝑢
+∂
+𝑧
+−
+𝑝
+σ
+el
+	​
+
+(Z)=E
+∂z
+∂u
+	​
+
+−p.
+
+Step 3 : The entropic contribution arises from the mixing entropy of the polymer chain with the solvent. 
+𝜎
+𝑒
+𝑛
+𝑡
+(
+𝑍
+)
+=
+−
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+𝜙
+𝑝
+2
+σ
+ent
+	​
+
+(Z)=−
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+ϕ
+p
+2
+	​
+
+. This equivalent to osmotic pressure of the polymer. The solute 
+𝜙
+(
+0
+)
+ϕ
+(0)
+ does not lead to any entropic contribution (osmpotic pressure in the traditional sense) since the it is fully permeable through the hydrogel.
+
+Step 4 : The stress contribution arising from the steric interactions between polymer and the solute is diffusiophoretic in nature in the presence of the gradient of 
+𝜙
+(
+0
+)
+ϕ
+(0)
+. Hence, 
+𝜎
+𝑖
+𝑛
+𝑡
+(
+𝑍
+)
+=
+−
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+𝑅
+2
+2
+𝑘
+𝑓
+𝜙
+(
+0
+)
+σ
+int
+	​
+
+(Z)=−
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+2k
+f
+	​
+
+R
+2
+	​
+
+ϕ
+(0)
+. Here 
+𝑅
+R is the exclusion radius and 
+𝑘
+𝑓
+k
+f
+	​
+
+ is the permeability of the hydrogel.
+
+Step 5 : Hence 
+𝜎
+(
+𝑍
+)
+=
+𝐸
+∂
+𝑢
+∂
+𝑧
+−
+𝑝
+−
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+𝜙
+𝑝
+2
+−
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+𝑅
+2
+2
+𝑘
+𝑓
+𝜙
+(
+0
+)
+σ(Z)=E
+∂z
+∂u
+	​
+
+−p−
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+ϕ
+p
+2
+	​
+
+−
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+2k
+f
+	​
+
+R
+2
+	​
+
+ϕ
+(0)
+.
+
+Step 6 : The stress balance at the gel supernatant domain implies that
+
+
+𝜎
+(
+𝑍
+=
+1
+)
+=
+−
+𝑃
+σ(Z=1)=−P.
+
+As well as equal chemical potential of the solvent imply that at 
+𝑍
+=
+𝐻
+Z=H
+
+
+−
+𝑝
+−
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+𝜙
+𝑝
+2
+−
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+𝑅
+2
+2
+𝑘
+𝑓
+𝜙
+(
+0
+)
+=
+−
+𝑃
+−p−
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+ϕ
+p
+	​
+
+2
+−
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+2k
+f
+	​
+
+R
+2
+	​
+
+ϕ
+(0)
+=−P.
+
+Hence, at 
+𝑍
+=
+𝐻
+Z=H,
+
+
+𝑃
+−
+𝑝
+=
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+𝜙
+𝑝
+2
++
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+𝑅
+2
+2
+𝑘
+𝑓
+𝜙
+(
+0
+)
+P−p=
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+ϕ
+p
+	​
+
+2
++
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+2k
+f
+	​
+
+R
+2
+	​
+
+ϕ
+(0)
+ [1].
+
+Step 7: Now we need to estimate 
+𝑘
+𝑓
+k
+f
+	​
+
+ and 
+𝑅
+R from the given information. We estimate 
+𝑘
+𝑓
+k
+f
+	​
+
+ based on the given inherent relaxation time scale of the hydrogel. 
+𝜏
+=
+𝐻
+2
+𝜇
+𝑓
+𝑘
+𝑓
+𝐸
+τ=
+k
+f
+	​
+
+E
+H
+2
+μ
+f
+	​
+
+	​
+
+. Substituting the values of relevant variables we obtain 
+𝑘
+𝑓
+=
+4
+×
+10
+−
+19
+𝑚
+2
+k
+f
+	​
+
+=4×10
+−19
+m
+2
+.
+
+Step 8:
+To estimate 
+𝑅
+R, we evaluate initial instantaneous velocity 
+𝑉
+𝑟
+V
+r
+	​
+
+ of the hydrogel-supernatant boundary. From the linear fit provided in the subfigure (a), 
+𝑉
+𝑟
+=
+0.31
+𝐻
+𝜏
+ 
+m
+/
+s
+V
+r
+	​
+
+=0.31
+τ
+H
+	​
+
+ m/s.
+
+Step 9:
+In the no flux boundary conditions, the diffusiopheretic velocity of the polymer network is given by 
+𝑉
+𝐷
+𝑃
+=
+−
+𝑘
+𝐵
+𝑇
+𝑅
+2
+2
+𝑣
+𝑐
+𝜇
+𝑓
+∂
+𝜙
+(
+0
+)
+∂
+𝑍
+V
+DP
+	​
+
+=−
+2v
+c
+	​
+
+μ
+f
+	​
+
+k
+B
+	​
+
+TR
+2
+	​
+
+∂Z
+∂ϕ
+(0)
+	​
+
+.
+
+Step 10:
+The intial instantaneous velocity must be equal to diffusiophoretic velocity before the elastic restorative forces kick in. Hence
+
+𝑉
+𝐷
+𝑃
+=
+𝑉
+𝑟
+V
+DP
+	​
+
+=V
+r
+	​
+
+.
+
+From step 8 and step 9
+
+
+−
+𝑘
+𝐵
+𝑇
+𝑅
+2
+2
+𝑣
+𝑐
+𝜇
+𝑓
+∂
+𝜙
+(
+0
+)
+∂
+𝑍
+=
+0.31
+𝐻
+𝜏
+−
+2v
+c
+	​
+
+μ
+f
+	​
+
+k
+B
+	​
+
+TR
+2
+	​
+
+∂Z
+∂ϕ
+(0)
+	​
+
+=0.31
+τ
+H
+	​
+
+
+
+In the steady profile shown in subfigure (b), 
+∂
+𝜙
+(
+0
+)
+∂
+𝑍
+=
+−
+0.018
+21
+𝐻
+∂Z
+∂ϕ
+(0)
+	​
+
+=−
+21H
+0.018
+	​
+
+. Substituting numerical values from the steps above and simplifying this relation further we get
+
+𝑅
+=
+2.65325
+×
+10
+−
+10
+ 
+m
+R=2.65325×10
+−10
+ m.
+
+Step 11:
+Since the 
+𝜙
+(
+0
+)
+ϕ
+(0)
+ profile remains constant through out the evolution, we can obtain its value at 
+𝑍
+=
+𝐻
+Z=H by interpolating values provided in the subfigure (b). 
+𝜙
+(
+0
+)
+(
+0
+)
+=
+0.018
+ϕ
+(0)
+(0)=0.018 and 
+𝜙
+(
+0
+)
+(
+21
+𝐻
+)
+=
+0.00
+ϕ
+(0)
+(21H)=0.00.
+Hence 
+𝜙
+(
+0
+)
+(
+𝐻
+)
+=
+0.0171429
+ϕ
+(0)
+(H)=0.0171429.
+
+Step 12:
+Finally substituting values for all the evaluated quantities in step 6, we obtain
+
+𝑃
+−
+𝑝
+=
+1.28
+×
+10
+6
+ 
+P
+a
+P−p=1.28×10
+6
+ Pa.
+
+Final Answer: 
+1.28
+×
+10
+6
+1.28×10
+6
+
+GTFA
+
+1.28
+×
+10
+6
+1.28×10
+6
+
+Distractors
+
+A) 
+2.82
+×
+10
+5
+2.82×10
+5
+
+B) 
+6.56
+×
+10
+5
+6.56×10
+5
+
+C) 
+1.64
+×
+10
+7
+1.64×10
+7
+
+D) 
+7.05
+×
+10
+6
+7.05×10
+6
+
+E) 
+3.00
+×
+10
+3
+3.00×10
+3
+
+Model answer
+
+2.82
+×
+10
+5
+2.82×10
+5
+	​
+
+
+Failure reason
+
+The model response incorrectly applies chemical potential continuity
+
+
+𝑝
+−
+𝑃
+=
+𝑘
+𝐵
+𝑇
+𝑣
+𝑐
+ 
+𝜙
+𝑝
+ 
+𝜙
+(
+0
+)
+p−P=
+v
+c
+	​
+
+k
+B
+	​
+
+T
+	​
+
+ϕ
+p
+	​
+
+ϕ
+(0)
+
+
+This equation ignores the both polymer entropic contribution and incorrectly calculates contribution from the steric interactions between polymer and the solute.
+
+Detailed image description
+
+Subfigure (a) shows the evolution of the height 
+ℎ
+h of the hydrogel while Subfigure (b) shows the evolution of the 
+𝜙
+(
+0
+)
+ϕ
+(0)
+ across the whole domain. Subfigure (a) also shows linear fit through first few data points. The equation of the linear fit is 
+ℎ
+/
+𝐻
+=
+0.31
+𝑡
+/
+𝜏
++
+1.00
+h/H=0.31t/τ+1.00. The 
+𝜙
+(
+0
+)
+ϕ
+(0)
+ profile remains linear with 
+𝜙
+(
+0
+)
+(
+0
+)
+=
+0.018
+ϕ
+(0)
+(0)=0.018 and 
+𝜙
+(
+0
+)
+(
+0
+)
+=
+0.00
+ϕ
+(0)
+(0)=0.00 throughout the evolution.
+
+2
+Task 2: Circuit Analysis
+Reference images
+Image 1: Amplifier circuit schematic
+Prompt
+
+Look at the amplifier in the attached image. Determine the 
+𝑉
+𝐶
+𝐸
+V
+CE
+	​
+
+ voltage of the BJT 
+𝑄
+1
+Q
+1
+	​
+
+ when 
+𝑄
+1
+Q
+1
+	​
+
+ is biased such that 
+𝐼
+𝐵
+=
+45.8
+ 
+𝜇
+A
+I
+B
+	​
+
+=45.8μA. Assume the JFET 
+𝐽
+1
+J
+1
+	​
+
+ operates in saturation.
+
+The following values are given:
+
+
+𝑅
+1
+=
+100
+ 
+k
+Ω
+,
+𝑅
+2
+=
+100
+ 
+k
+Ω
+,
+𝑅
+3
+=
+500
+ 
+k
+Ω
+R
+1
+	​
+
+=100kΩ,R
+2
+	​
+
+=100kΩ,R
+3
+	​
+
+=500kΩ
+
+
+
+𝑄
+1
+:
+ 
+𝛽
+=
+200
+,
+𝑉
+𝐵
+𝐸
+=
+0.6
+ 
+V
+,
+𝑉
+𝐴
+=
+100
+ 
+V
+Q
+1
+	​
+
+: β=200,V
+BE
+	​
+
+=0.6V,V
+A
+	​
+
+=100V
+
+
+
+𝐽
+1
+:
+ 
+𝐼
+𝐷
+𝑆
+𝑆
+=
+10
+ 
+m
+A
+,
+𝑉
+𝑃
+=
+3
+ 
+V
+,
+𝑔
+𝐷
+𝑆
+=
+50
+ 
+𝜇
+S
+J
+1
+	​
+
+: I
+DSS
+	​
+
+=10mA,V
+P
+	​
+
+=3V,g
+DS
+	​
+
+=50μS
+
+
+
+𝑉
+𝐷
+𝐷
+=
+15
+ 
+V
+,
+𝑉
+𝑆
+𝑆
+=
+0
+V
+DD
+	​
+
+=15V,V
+SS
+	​
+
+=0
+
+Step-by-step solution
+
+GTFA
+
+Distractors
+
+Model answer
+
+Failure reason
+
+3
+Task 3: Beam Analysis
+Reference images
+Image 1: a) Beam loading and boundary conditions with span dimensions; b) I-beam cross section with dimensions
+Prompt
+
+Figure a) shows a long beam along with its boundary conditions made up of some material with Youngs Modulus of 
+𝐸
+=
+210
+E=210 GPa. The load is applied on points A,C while the boundary conditions are applied on B and D. Along with this, a moment is applied on A, and uniformly distributed loads are applied between BC and CD as shown in the figure a). Figure b) shows the cross section of the beam along with its dimensions. Define 
+𝑥
+x as the distance from point A in the entire beam in meters. If the points of contraflexure of the beam in Figure a) are located at exactly 
+𝑥
+=
+1
+x=1 and 
+𝑥
+=
+3
+x=3, what is the deflection of the beam at positions 
+𝑥
+=
+1
+,
+2
+,
+3
+,
+4
+,
+5
+,
+6
+x=1,2,3,4,5,6. Give your results in mm, truncating the value to 2 decimals as a set 
+(
+𝑦
+1
+,
+𝑦
+2
+,
+𝑦
+3
+,
+𝑦
+4
+,
+𝑦
+5
+,
+𝑦
+6
+)
+(y
+1
+	​
+
+,y
+2
+	​
+
+,y
+3
+	​
+
+,y
+4
+	​
+
+,y
+5
+	​
+
+,y
+6
+	​
+
+). Here 
+𝑦
+𝑖
+y
+i
+	​
+
+ is the deflection at position 
+𝑥
+=
+𝑖
+x=i.
+
+Step-by-step solution
+
+GTFA
+
+Distractors
+
+Model answer
+
+Failure reason
+
+📌 How to use these references
+Study the exact section order in each example: prompt, step-by-step solution, GTFA, distractors, model answer, and failure reason.
+Keep the early steps observation-only, then move the interpretation into the later steps of the solution.
+Make the final answer explicit and keep the failure reason tightly tied to the model’s specific mistake.

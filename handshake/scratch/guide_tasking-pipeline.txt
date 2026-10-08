@@ -1,0 +1,105 @@
+🕯️
+Project Lumiere (Engineering and CS)
+Search…
+⌘K
+Handshake AI
+Home
+Announcements
+Onboarding Meeting
+Ground Rules
+Video Walkthroughs
+ONBOARDING
+Handshake AI Platform
+TASKING
+Understand the Tasking Pipeline
+The seven stages
+From where can a task come back to you?
+Multimodal Task
+Overview & Lifecycle
+Task Submission Checklist
+Images to Use
+Writing Prompts
+Common Issues & Pitfalls
+Golden Examples
+Helpful Resources
+LaTeX & KaTeX Resources
+Reviewing
+TEAM & ADMIN
+Project Leadership
+Communication
+Pay & Tracker Tasks
+FAQs
+Collapse
+🕯️
+Project Lumiere (Engineering and CS)
+⚙️
+Engineering and CS
+Understand the tasking pipeline
+
+Once you submit a task it moves through a pipeline of automated checks and human reviews before it's ready to deliver. At several of these stages, the task can bounce back to you for a fix. This page walks through every stage so you know exactly where and why your task might return.
+
+The seven stages
+01
+Stage 1 — Attempt stage
+AUTOMATED CHECKS
+
+We have several in-task quality checkers for the prompt, image description, model failures, science judge and distractor format. These checks flag any issues that must be fixed in the task itself before submission. Your prompt must also require at least three levels of reasoning to answer. If you disagree with a flag, you must provide a clear written justification for why you disagree. In addition, any submitted task must have both responder models fail in order to be submitted.
+
+There are many steps involved in this stage. They are described in detail in the Overview & Lifecycle section below.
+
+02
+Stage 2 — Justification Check (Holding)
+JUSTIFICATION REVIEW
+CAN RETURN TO YOU
+
+Your disagreements/rebuttals to the in-task quality checkers are reviewed here. If a justification is determined to be insufficient, the task is returned to you to either provide a stronger justification or modify the task to remove the Science Judge flag. If there is no resolution after two attempts, you will be directed to fill out a dispute form that will be reviewed by a human expert.
+
+03
+Stage 3 — Holding (Pass@) - First model dispatch
+MODEL CHECK
+CAN RETURN TO YOU
+
+We run two models against the task again. At least 1 of 2 must fail for the task to advance. If not, the task is returned to you.
+
+04
+Stage 4 — Review 1
+HUMAN REVIEW
+CAN RETURN TO YOU
+
+A human reviewer inspects the task. Any issues found here are returned to you. Tasks with no issues pass through to the next stage.
+
+05
+Stage 5 — Holding (Final Pass@) - Second model dispatch
+QUALITY SIGNAL
+CAN RETURN TO YOU
+
+We run four model checks. At least 2 of 4 must fail for the task to pass. If not, the task is returned to you.
+
+06
+Stage 6 — Review 2
+HUMAN QC
+CAN RETURN TO YOU
+
+A sampled portion of tasks receives a second human QC pass. If issues are found here, the task can still be returned to you for a final fix.
+
+07
+Stage 7 — Ready to deliver
+FINAL
+
+The task has cleared every automated and human checkpoint. It is finalized and delivered to the customer. Nothing comes back to you from this stage.
+
+You will be paid for tasks that make it to this stage.
+
+From where can a task come back to you?
+Note
+
+Tasks returned from the automated stages (2,3,5) will have comments at the top of the page and tasks returned from the manual review stages (4,6) will have comments on the right that need to be addressed.
+
+Five return points
+Stage 2 — Justification Check (Holding): your justification for a Science Judge flag is judged insufficient.
+Stage 3 — Holding (Pass@) - First model dispatch: fewer than 1 of 2 models fail.
+Stage 4 — Review 1: a human reviewer flags issues.
+Stage 5 — Holding (Final Pass@) - Second model dispatch: fewer than 2 of 4 models fail.
+Stage 6 — Review 2: a sampled QC pass surfaces remaining issues.
+
+Everywhere else, the pipeline moves forward on its own. The goal of every checklist and every step in the workflow is to get your task through all seven stages on the first pass — the fewer returns, the faster the task is delivered and the less rework for you.

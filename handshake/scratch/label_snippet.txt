@@ -1,0 +1,5 @@
+bes the failure in the response you chose above.
+
+Label–element or axis mis-binding — reads every label correctly but attaches it to the wrong object. Assigns θ to the wrong vertex, the 4 Ω label to the wrong branch, a force label to the wrong arrow.
+Axis, scale & unit misread — misinterprets the plot frame: log vs linear, tick spacing, non-zero origin, secondary y-axis, axis units, scale bar. Treats a semilog decade as a linear step; ignores the "×10³" on the axis.
+Data extraction error — wrong information pulled from a chart or image: wrong s

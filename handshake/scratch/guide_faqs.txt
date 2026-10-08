@@ -1,0 +1,54 @@
+🕯️
+Project Lumiere (Engineering and CS)
+Search…
+⌘K
+Handshake AI
+Home
+Announcements
+Onboarding Meeting
+Ground Rules
+Video Walkthroughs
+ONBOARDING
+Handshake AI Platform
+TASKING
+Understand the Tasking Pipeline
+Multimodal Task
+Overview & Lifecycle
+Task Submission Checklist
+Images to Use
+Writing Prompts
+Common Issues & Pitfalls
+Golden Examples
+Helpful Resources
+LaTeX & KaTeX Resources
+Reviewing
+TEAM & ADMIN
+Project Leadership
+Communication
+Pay & Tracker Tasks
+FAQs
+Collapse
+🕯️
+Project Lumiere (Engineering and CS)
+⚙️
+Engineering and CS
+❓ FAQs
+Time Tracking & Payment
+When do I get paid?
+How do I track time?
+Max hours?
+Paid for reading onboarding?
+Paid for meetings?
+Onboarding
+How long is the project?
+I passed the quiz but still see it?
+Platform Access
+When will I get Slack?
+Where are the tasking instructions?
+Production
+How long for review?
+Can I discuss on Slack science and strategies relevant for tasking?
+Can I use the same image to generate multiple tasks?
+I found an image/question pair online that has an accepted license. Can I use it as is?
+Task Guidelines
+Can I use AI tools?

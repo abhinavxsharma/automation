@@ -1,0 +1,5 @@
+Step 1: Identify all 8 nodes and directed edge latencies (ms).
+Step 2: Trace candidate directed paths from source $S$ to $T$.
+Step 3: Evaluate path $S \to A \to D$: latency is $14+22=36\text{ ms}$.
+Step 4: Continue along $S \to A \to D \to E \to F \to T$: critical path is $76\text{ ms}$.
+Step 5: Ground Truth Final Answer is 76.

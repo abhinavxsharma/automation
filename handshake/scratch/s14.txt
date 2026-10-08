@@ -1,0 +1,15 @@
+Error Type
+
+Select the error type that best describes the failure in the response you chose above.
+
+Label–element or axis mis-binding — reads every label correctly but attaches it to the wrong object. Assigns θ to the wrong vertex, the 4 Ω label to the wrong branch, a force label to the wrong arrow.
+Axis, scale & unit misread — misinterprets the plot frame: log vs linear, tick spacing, non-zero origin, secondary y-axis, axis units, scale bar. Treats a semilog decade as a linear step; ignores the "×10³" on the axis.
+Data extraction error — wrong information pulled from a chart or image: wrong series mapped to the legend, bar height misjudged, interpolation between gridlines wrong. Reports the blue curve's peak when asked about the dashed one.
+Connectivity / topology error — misreads what connects to what or how elements are configured. Series read as parallel, a junction missed in a circuit, wrong node adjacency in a graph, mis-traced pathway in a metabolic map.
+Geometric relation error — misreads configuration in figures: parallelism, perpendicularity, tangency, collinearity, inside vs outside a region, occluded edges in 3D projections. Assumes a triangle is right-angled because it looks it.
+Chemical structure misinterpretation — skeletal-formula-specific: implicit carbons/hydrogens, bond order, stereochemistry (wedge/dash, cis/trans, R/S), ring size, functional group ID, formal charges and lone pairs. Counts a double bond as single; inverts a stereocenter.
+Direction & sign-convention error — misreads arrows and orientation: force/current/field direction, reaction vs equilibrium vs resonance arrows, coordinate handedness, clockwise vs counterclockwise moments, slope sign. Takes current as flowing the opposite way; treats a resonance arrow as an equilibrium.
+Figure-based quantitative estimation error — errors in counting or measuring off the image: grid squares, lattice points, spectral peaks, gear teeth, cell divisions; also treating a "not to scale" schematic as measurable. Measures an angle off a schematic instead of using the given value.
+Unextracted given / prior override — the figure carries a value or condition available nowhere else and the model omits it, substitutes a plausible number, or answers about a canonical textbook figure it assumed instead of the one shown. Invents a beam length that was dimensioned in the drawing.
+
+Label–element or axis mis-binding
