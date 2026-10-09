@@ -28,11 +28,12 @@ def process_single_task(page: Page, cfg: Settings, auto_submit: bool) -> bool:
         logger.info("Generating captions (attempt %d/3)...", attempt)
         captions = generate_captions(img_ref, cfg, error_feedback=error_feedback)
         fill_maven_form(context, captions)
-        passed, error_msg = click_validate(context)
+        if captions.get("unusable_quality") in (True, "true"):
+            return submit_task(context, start_time, auto_submit, cfg.target_remaining_sec, page=page)
+        passed, error_feedback = click_validate(context)
         if passed:
             return submit_task(context, start_time, auto_submit, cfg.target_remaining_sec, page=page)
-        error_feedback = error_msg
-        logger.warning("Attempt %d error: %s. Retrying...", attempt, error_msg)
+        logger.warning("Attempt %d error: %s. Retrying...", attempt, error_feedback)
     logger.error("Task failed validation after 3 attempts.")
     return False
 
@@ -52,7 +53,6 @@ def process_maven_tasks(page: Page, cfg: Settings, auto_submit: bool = True) -> 
             logger.warning("Task error: %s", exc)
             ok = False
         if not ok:
-            logger.warning("Task incomplete. Refreshing page...")
             page.reload()
             if not auto_submit:
                 break

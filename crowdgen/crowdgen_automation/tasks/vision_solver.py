@@ -11,13 +11,14 @@ from crowdgen_automation.config import Settings
 from crowdgen_automation.tasks import caption_cache, key_pool
 
 logger = logging.getLogger(__name__)
-SYSTEM_PROMPT = ('Expert Project Origami captioner. JSON: {"detailed_caption": "1-3 present sentences, >=26 words, physical facts.", "short_caption": "1 sentence, 6-25 words.", "camera_angle": "Complete sentence (12-30 words) detailing viewpoint, angle, perspective with setting, e.g. \'A low-angle view from near ground level, showing a standing figure in a medium shot, with the sky behind them.\' Never short fragments. If not identifiable, \'\'."}. FORBIDDEN SUBJECTIVE WORDS: beautiful, beautifully, stunning, gorgeous, scenic, peaceful, charming, adorable, picturesque, wonderful, delicate, perfect, rustic, vibrant. FORBIDDEN ASSUMPTIVE WORDS: appears to be, seems, likely, probably, possibly, may/might/could be, suggesting. NO role guessing. NO speed words.')
-SUBJ_REGEX = re.compile(r"\b(beautifully|beautiful|stunning|gorgeous|scenic|peaceful|charming|adorable|picturesque|delicate|vibrant)\s*", re.IGNORECASE)
+SYSTEM_PROMPT = ('Expert Project Origami captioner. If image is unusable (blurry/dark/damaged so subject unknown), return {"unusable_quality": true, "detailed_caption": "", "short_caption": "", "camera_angle": ""}. Else JSON: "detailed_caption" (1-3 sentences, >=26 words, includes all facts from short and adds visible details), "short_caption" (1 sentence, 6-25 words), "camera_angle" (12-30 word sentence or ""). RULES: 1. Start with main subject (NO "A photograph of", "An image of", "This image shows"). 2. Numbers: spell out counts ("two dogs"); keep printed dates/years/pages as digits ("June 18, 2011", "page 39"). 3. FORBIDDEN WORDS: mostly, appears to be, appears, appear, kind of, sort of, some type of, possible, potentially, resembling, seems, likely, probably, suggesting. 4. NO subjective/emotional words: beautiful, stunning, gorgeous, scenic, peaceful, charming, adorable, picturesque, delicate, vibrant, playful, enjoying. 5. NO role guessing. NO speed words. NO "X or Y" guesses (write "no text and no logos", not "no text or logos").')
+BANNED_WORDS = re.compile(r"\b(beautifully|beautiful|stunning|gorgeous|scenic|peaceful|charming|adorable|picturesque|delicate|vibrant|playful|enjoying|beaming|wonderful|rustic)\s*", re.IGNORECASE)
 
 
 def _sanitize(text: str) -> str:
-    c = re.sub(r"^(?:Detailed|Short)\s*Caption\s*:\s*", "", text, flags=re.IGNORECASE)
-    return re.sub(r"[ \t]+", " ", SUBJ_REGEX.sub("", re.sub(r"\bcontrast\s+beautifully\s+with\b", "contrast with", c, flags=re.IGNORECASE))).strip()
+    c = re.sub(r"^(?:(?:Detailed|Short)\s*Caption\s*:\s*|(?:A\s+photograph\s+of|An\s+image\s+of|This\s+image\s+shows)\s+)", "", text, flags=re.IGNORECASE)
+    c = re.sub(r"[ \t]+", " ", BANNED_WORDS.sub("", re.sub(r"\bmostly\s+|\b(kind|sort)\s+of\s*|\bcontrast\s+beautifully\s+with\b", lambda m: "contrast with" if "contrast" in m.group(0) else "", c, flags=re.IGNORECASE))).strip()
+    return (c[0].upper() + c[1:]) if c else ""
 
 
 def _clean_json(text: str) -> dict[str, str]:
@@ -25,15 +26,14 @@ def _clean_json(text: str) -> dict[str, str]:
     data = json.loads(m.group(0) if (m := re.search(r"\{.*\}", c, re.DOTALL)) else c)
     res = {k: _sanitize(str(data.get(k, ""))) for k in ("detailed_caption", "short_caption", "camera_angle")}
     if (ang := res["camera_angle"]) and len(ang.split()) < 5 and (sh := res["short_caption"]):
-        res["camera_angle"] = f"A {ang.rstrip('.')} view showing {sh[0].lower() + sh[1:].rstrip('.')}."
-    return res
+        res["camera_angle"] = f"A {ang.lower().rstrip('.')} view showing {sh[0].lower() + sh[1:].rstrip('.')}."
+    return {"unusable_quality": "true", "detailed_caption": "", "short_caption": "", "camera_angle": ""} if data.get("unusable_quality") in (True, "true") else res
 
 
 def _call_api(url: str, key: str, model: str, img: str, err: str | None) -> dict[str, str]:
     p = f"Describe image per Project Origami rules.{f' CRITICAL: Previous failed with error: {err}. Fix strictly.' if err else ''}"
     payload = {"model": model, "response_format": {"type": "json_object"}, "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": [{"type": "text", "text": p}, {"type": "image_url", "image_url": {"url": img}}]}]}
-    res = requests.post(url, headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"}, json=payload, timeout=45)
-    res.raise_for_status()
+    (res := requests.post(url, headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"}, json=payload, timeout=45)).raise_for_status()
     return _clean_json(res.json()["choices"][0]["message"]["content"])
 
 

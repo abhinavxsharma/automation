@@ -181,3 +181,27 @@ def test_generate_captions_rotates_on_429() -> None:
         # Second call rotated to key2
         assert mock_post.call_args_list[1][1]["headers"]["Authorization"] == "Bearer key2"
 
+
+def test_sanitize_removes_forbidden_openers_and_mostly() -> None:
+    """Verify _sanitize removes 'A photograph of', 'An image of', and 'mostly'."""
+    raw = "A photograph of a blue car on a mostly clear road."
+    assert _sanitize(raw) == "A blue car on a clear road."
+    raw2 = "An image of two dogs sitting on a park bench."
+    assert _sanitize(raw2) == "Two dogs sitting on a park bench."
+    raw3 = "This image shows a white vase with green leaves."
+    assert _sanitize(raw3) == "A white vase with green leaves."
+
+
+def test_clean_json_unusable_quality_flag() -> None:
+    """Verify clean_json sets unusable_quality and blanks captions for unusable images."""
+    raw = (
+        '{"unusable_quality": true, "short_caption": "A blurry dark image.", '
+        '"detailed_caption": "This image is too blurry to see anything."}'
+    )
+    res = _clean_json(raw)
+    assert res["unusable_quality"] == "true"
+    assert res["short_caption"] == ""
+    assert res["detailed_caption"] == ""
+    assert res["camera_angle"] == ""
+
+

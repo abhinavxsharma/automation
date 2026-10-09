@@ -11,6 +11,7 @@ DETAILED_SEL = 'textarea[placeholder*="detailed caption" i], [data-testid*="deta
 SHORT_SEL = 'textarea[placeholder*="short caption" i], [data-testid*="short-caption"]'
 ANGLE_SEL = 'input[placeholder*="Leave blank if not applicable" i], input[name*="angle" i]'
 NO_ISSUE_SEL = 'label:has-text("No (No Issue Identified)"), input[type="radio"][value*="No" i]'
+ISSUE_SEL = 'label:has-text("Yes"), input[type="radio"][value*="Yes" i], label:has-text("Issue")'
 
 
 def _fill_text(loc: Locator, text: str, name: str) -> None:
@@ -27,6 +28,13 @@ def _fill_text(loc: Locator, text: str, name: str) -> None:
 
 def fill_maven_form(context: Page | FrameLocator, captions: dict[str, str]) -> None:
     """Populate setup questions, detailed caption, short caption, and camera angle."""
+    if captions.get("unusable_quality") in (True, "true"):
+        issue = context.locator(ISSUE_SEL).first
+        if issue.is_visible(timeout=3000):
+            issue.click()
+            logger.info("Flagged Image Check (unusable quality). Leaving captions empty.")
+        return
+
     no_issue = context.locator(NO_ISSUE_SEL).first
     if no_issue.is_visible(timeout=3000):
         no_issue.click()

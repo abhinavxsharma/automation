@@ -51,3 +51,30 @@ def test_fill_maven_form_fills_all_fields() -> None:
     mock_angle.press_sequentially.assert_called_with(
         "low-angle view", delay=65, timeout=90000
     )
+
+
+def test_fill_maven_form_unusable_quality_flags_issue() -> None:
+    """Verify unusable quality flags Image Check and leaves captions blank."""
+    mock_ctx = MagicMock()
+    mock_issue = MagicMock()
+    mock_detailed = MagicMock()
+    mock_short = MagicMock()
+
+    def locator_mock(sel: str) -> MagicMock:
+        loc = MagicMock()
+        if "Yes" in sel or "Issue" in sel:
+            loc.first = mock_issue
+        elif "detailed" in sel:
+            loc.first = mock_detailed
+        elif "short" in sel:
+            loc.first = mock_short
+        return loc
+
+    mock_ctx.locator.side_effect = locator_mock
+    mock_issue.is_visible.return_value = True
+
+    fill_maven_form(mock_ctx, {"unusable_quality": "true"})
+
+    mock_issue.click.assert_called_once()
+    mock_detailed.press_sequentially.assert_not_called()
+    mock_short.press_sequentially.assert_not_called()
