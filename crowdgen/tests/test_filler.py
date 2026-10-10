@@ -78,3 +78,30 @@ def test_fill_maven_form_unusable_quality_flags_issue() -> None:
     mock_issue.click.assert_called_once()
     mock_detailed.press_sequentially.assert_not_called()
     mock_short.press_sequentially.assert_not_called()
+
+
+def test_fill_maven_form_dense_document_tags_dense() -> None:
+    """Verify dense document tags Dense radio button and leaves captions blank."""
+    mock_ctx = MagicMock()
+    mock_dense = MagicMock()
+    mock_detailed = MagicMock()
+    mock_short = MagicMock()
+
+    def locator_mock(sel: str) -> MagicMock:
+        loc = MagicMock()
+        if "Dense" in sel:
+            loc.first = mock_dense
+        elif "detailed" in sel:
+            loc.first = mock_detailed
+        elif "short" in sel:
+            loc.first = mock_short
+        return loc
+
+    mock_ctx.locator.side_effect = locator_mock
+    mock_dense.is_visible.return_value = True
+
+    fill_maven_form(mock_ctx, {"is_dense": "true"})
+
+    mock_dense.click.assert_called_once()
+    mock_detailed.press_sequentially.assert_not_called()
+    mock_short.press_sequentially.assert_not_called()

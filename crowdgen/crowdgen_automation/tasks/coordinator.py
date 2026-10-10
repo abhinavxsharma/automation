@@ -28,7 +28,7 @@ def process_single_task(page: Page, cfg: Settings, auto_submit: bool) -> bool:
         logger.info("Generating captions (attempt %d/3)...", attempt)
         captions = generate_captions(img_ref, cfg, error_feedback=error_feedback)
         fill_maven_form(context, captions)
-        if captions.get("unusable_quality") in (True, "true"):
+        if captions.get("unusable_quality") in (True, "true") or captions.get("is_dense") in (True, "true"):
             return submit_task(context, start_time, auto_submit, cfg.target_remaining_sec, page=page)
         passed, error_feedback = click_validate(context)
         if passed:

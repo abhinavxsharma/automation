@@ -11,35 +11,35 @@ from crowdgen_automation.config import Settings
 from crowdgen_automation.tasks import caption_cache, key_pool
 
 logger = logging.getLogger(__name__)
-SYSTEM_PROMPT = ('Expert Project Origami captioner. If image is unusable (blurry/dark/damaged so subject unknown), return {"unusable_quality": true, "detailed_caption": "", "short_caption": "", "camera_angle": ""}. Else JSON: "detailed_caption" (1-3 sentences, >=26 words, includes all facts from short and adds visible details), "short_caption" (1 sentence, 6-25 words), "camera_angle" (12-30 word sentence or ""). RULES: 1. Start with main subject (NO "A photograph of", "An image of", "This image shows"). 2. Numbers: spell out counts ("two dogs"); keep printed dates/years/pages as digits ("June 18, 2011", "page 39"). 3. FORBIDDEN WORDS: mostly, appears to be, appears, appear, kind of, sort of, some type of, possible, potentially, resembling, seems, likely, probably, suggesting. 4. NO subjective/emotional words: beautiful, stunning, gorgeous, scenic, peaceful, charming, adorable, picturesque, delicate, vibrant, playful, enjoying. 5. NO role guessing. NO speed words. NO "X or Y" guesses (write "no text and no logos", not "no text or logos").')
-BANNED_WORDS = re.compile(r"\b(beautifully|beautiful|stunning|gorgeous|scenic|peaceful|charming|adorable|picturesque|delicate|vibrant|playful|enjoying|beaming|wonderful|rustic)\s*", re.IGNORECASE)
+SYSTEM_PROMPT = ('Expert Project Origami Batch 4 captioner. If unusable image (blurry/dark/damaged), return {"unusable_quality": true, "detailed_caption": "", "short_caption": "", "camera_angle": ""}. If dense text doc, return {"is_dense": true, "detailed_caption": "", "short_caption": "", "camera_angle": ""}. Else JSON: "detailed_caption" (1-3 sentences, >=26 words, matches short and adds visible details), "short_caption" (1 sentence, 6-25 words), "camera_angle" (12-30 word sentence or ""). ENGLISH ONLY. RULES: 1. Start with main subject (NO "A photograph of", "An image of", "This image shows"). 2. Numbers: count items as words ("two dogs"); printed dates/years/pages as digits ("June 18, 2011", "page 39"). 3. FORBIDDEN HEDGING: appears, appear, seems, likely, probably, possibly, perhaps, presumably, apparently, may/might/could be, suggests, resembles, looks like, kind/sort of, unclear. 4. FORBIDDEN VAGUE/OPINION: mostly, X or Y guesses (say "no text and no logos"), ornate, beautiful, elegant, striking, decorative, intricate, peaceful, charming, adorable, picturesque. 5. NEVER say "illegible" or "unreadable" - use "faint" instead. 6. NO age/role guessing: NO "ancient"/"antique" without date; NO unconfirmed jobs. 7. NO motion in still image: walking, flowing, swirling, slowly, driving.')
+BANNED_WORDS = re.compile(r"\b(beautifully|beautiful|stunning|gorgeous|scenic|peaceful|charming|adorable|picturesque|delicate|vibrant|ornate|elegant|striking|decorative|intricate|playful|enjoying|beaming|wonderful|rustic)\s*", re.IGNORECASE)
 
 
 def _sanitize(text: str) -> str:
-    c = re.sub(r"^(?:(?:Detailed|Short)\s*Caption\s*:\s*|(?:A\s+photograph\s+of|An\s+image\s+of|This\s+image\s+shows)\s+)", "", text, flags=re.IGNORECASE)
-    c = re.sub(r"[ \t]+", " ", BANNED_WORDS.sub("", re.sub(r"\bmostly\s+|\b(kind|sort)\s+of\s*|\bcontrast\s+beautifully\s+with\b", lambda m: "contrast with" if "contrast" in m.group(0) else "", c, flags=re.IGNORECASE))).strip()
+    c = re.sub(r"\b(illegible|unreadable)\b", "faint", re.sub(r"^(?:(?:Detailed|Short)\s*Caption\s*:\s*|(?:A\s+photograph\s+of|An\s+image\s+of|This\s+image\s+shows)\s+)", "", text, flags=re.IGNORECASE), flags=re.IGNORECASE)
+    c = re.sub(r"\ban\s+([b-df-hj-np-tv-z])", r"a \1", re.sub(r"\ba\s+([aeio])", r"an \1", re.sub(r"[ \t]+", " ", BANNED_WORDS.sub("", re.sub(r"\bmostly\s+|\b(kind|sort)\s+of\s*|\bcontrast\s+beautifully\s+with\b", lambda m: "contrast with" if "contrast" in m.group(0) else "", c, flags=re.IGNORECASE))).strip(), flags=re.IGNORECASE), flags=re.IGNORECASE)
     return (c[0].upper() + c[1:]) if c else ""
 
 
 def _clean_json(text: str) -> dict[str, str]:
     c = re.sub(r"```(?:json)?\s*|\s*```", "", re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)).strip()
-    data = json.loads(m.group(0) if (m := re.search(r"\{.*\}", c, re.DOTALL)) else c)
-    res = {k: _sanitize(str(data.get(k, ""))) for k in ("detailed_caption", "short_caption", "camera_angle")}
+    d = json.loads(m.group(0) if (m := re.search(r"\{.*\}", c, re.DOTALL)) else c)
+    if (k := next((f for f in ("is_dense", "unusable_quality") if d.get(f) in (True, "true")), None)):
+        return {k: "true", "detailed_caption": "", "short_caption": "", "camera_angle": ""}
+    res = {k: _sanitize(str(d.get(k, ""))) for k in ("detailed_caption", "short_caption", "camera_angle")}
     if (ang := res["camera_angle"]) and len(ang.split()) < 5 and (sh := res["short_caption"]):
         res["camera_angle"] = f"A {ang.lower().rstrip('.')} view showing {sh[0].lower() + sh[1:].rstrip('.')}."
-    return {"unusable_quality": "true", "detailed_caption": "", "short_caption": "", "camera_angle": ""} if data.get("unusable_quality") in (True, "true") else res
+    return res
 
 
 def _call_api(url: str, key: str, model: str, img: str, err: str | None) -> dict[str, str]:
     p = f"Describe image per Project Origami rules.{f' CRITICAL: Previous failed with error: {err}. Fix strictly.' if err else ''}"
-    payload = {"model": model, "response_format": {"type": "json_object"}, "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": [{"type": "text", "text": p}, {"type": "image_url", "image_url": {"url": img}}]}]}
-    (res := requests.post(url, headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"}, json=payload, timeout=45)).raise_for_status()
+    (res := requests.post(url, headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"}, json={"model": model, "response_format": {"type": "json_object"}, "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": [{"type": "text", "text": p}, {"type": "image_url", "image_url": {"url": img}}]}]}, timeout=45)).raise_for_status()
     return _clean_json(res.json()["choices"][0]["message"]["content"])
 
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
 def generate_captions(img_ref: str, cfg: Settings, error_feedback: str | None = None) -> dict[str, str]:
-    """Generate compliant Project Origami captions via Vision AI."""
     if not error_feedback and (cached := caption_cache.get_cached_caption(img_ref)):
         return cached
     keys = key_pool.load_keys(extra_keys=[cfg.openrouter_api_key] if cfg.openrouter_api_key else None)
@@ -49,7 +49,7 @@ def generate_captions(img_ref: str, cfg: Settings, error_feedback: str | None = 
             caption_cache.save_cached_caption(img_ref, res)
             return res
         except requests.HTTPError as exc:
-            if exc.response is not None and exc.response.status_code in (402, 429):
+            if exc.response and exc.response.status_code in (402, 429):
                 key_pool.mark_key_exhausted(key)
                 continue
             raise

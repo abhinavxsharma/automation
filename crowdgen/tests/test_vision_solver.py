@@ -205,3 +205,25 @@ def test_clean_json_unusable_quality_flag() -> None:
     assert res["camera_angle"] == ""
 
 
+def test_sanitize_replaces_illegible_and_fixes_articles() -> None:
+    """Verify _sanitize rewrites illegible to faint and corrects indefinite articles."""
+    raw = "An ornate wooden box with illegible notes inside."
+    assert _sanitize(raw) == "A wooden box with faint notes inside."
+    raw2 = "A document with unreadable script."
+    assert _sanitize(raw2) == "A document with faint script."
+
+
+def test_clean_json_dense_document_flag() -> None:
+    """Verify clean_json marks dense document and leaves captions blank."""
+    raw = (
+        '{"is_dense": true, "short_caption": "Dense page.", '
+        '"detailed_caption": "A full page with hundreds of words of printed text."}'
+    )
+    res = _clean_json(raw)
+    assert res["is_dense"] == "true"
+    assert res["short_caption"] == ""
+    assert res["detailed_caption"] == ""
+    assert res["camera_angle"] == ""
+
+
+
