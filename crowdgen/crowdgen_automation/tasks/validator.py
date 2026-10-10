@@ -7,8 +7,8 @@ from playwright.sync_api import Error, FrameLocator, Page
 
 logger = logging.getLogger(__name__)
 VALIDATE_SEL = 'button:has-text("Validate Captions"), button:has-text("Validate")'
-ERR_SEL = 'text="INVALID - DETAILED", text="INVALID - SHORT", text="cannot be overridden"'
-OK_SEL = 'text="VALID - all checks passed", text="Captions are valid", text="You may now submit"'
+ERR_SEL = ':has-text("INVALID"), :has-text("cannot be overridden")'
+OK_SEL = ':has-text("VALID - all checks passed"), :has-text("Captions are valid"), :has-text("You may now submit")'
 SUBMIT_SEL = 'button:has-text("Submit"), input[value="Submit"]'
 
 
@@ -27,19 +27,19 @@ def click_validate(context: Page | FrameLocator) -> tuple[bool, str | None]:
     except (Error, TimeoutError):
         pass
     for _ in range(12):
-        ok_loc = context.locator(OK_SEL).first
-        if ok_loc.is_visible():
-            logger.info("Validation passed: %s", ok_loc.inner_text().strip())
-            return True, None
         err_loc = context.locator(ERR_SEL).first
         if err_loc.is_visible():
             err_msg = err_loc.inner_text().strip()
             logger.warning("Validation failed: %s", err_msg)
             return False, err_msg
+        ok_loc = context.locator(OK_SEL).first
+        if ok_loc.is_visible():
+            logger.info("Validation passed: %s", ok_loc.inner_text().strip())
+            return True, None
         sub_loc = context.locator(SUBMIT_SEL).first
         if sub_loc.is_visible() and sub_loc.get_attribute("disabled") is None:
             logger.info("Validation passed! Submit button enabled.")
             return True, None
         time.sleep(0.5)
-    logger.info("Validation finished with no errors detected.")
-    return True, None
+    logger.warning("Validation finished without confirmation or enabled submit button.")
+    return False, "Validation not confirmed"
