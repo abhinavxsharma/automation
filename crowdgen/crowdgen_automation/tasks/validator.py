@@ -7,8 +7,9 @@ from playwright.sync_api import Error, FrameLocator, Page
 
 logger = logging.getLogger(__name__)
 VALIDATE_SEL = 'button:has-text("Validate Captions"), button:has-text("Validate")'
-ERR_SEL = ':has-text("INVALID"), :has-text("cannot be overridden")'
-OK_SEL = ':has-text("VALID - all checks passed"), :has-text("Captions are valid"), :has-text("You may now submit")'
+WAIT_SEL = "text=/Checking for duplicate|Validating/i"
+ERR_SEL = "text=/INVALID\\s*-\\s*(DETAILED|SHORT)|cannot be overridden/i"
+OK_SEL = "text=/VALID\\s*-\\s*all checks passed|Captions are valid|You may now submit/i"
 SUBMIT_SEL = 'button:has-text("Submit"), input[value="Submit"]'
 
 
@@ -21,11 +22,12 @@ def click_validate(context: Page | FrameLocator) -> tuple[bool, str | None]:
     val_btn.scroll_into_view_if_needed()
     val_btn.click()
     try:
-        val_wait = context.locator('text="Validating captions"').first
-        if val_wait.is_visible():
-            val_wait.wait_for(state="hidden", timeout=12000)
+        val_wait = context.locator(WAIT_SEL).first
+        if val_wait.is_visible(timeout=3000):
+            val_wait.wait_for(state="hidden", timeout=15000)
     except (Error, TimeoutError):
         pass
+    time.sleep(1.0)
     for _ in range(12):
         err_loc = context.locator(ERR_SEL).first
         if err_loc.is_visible():

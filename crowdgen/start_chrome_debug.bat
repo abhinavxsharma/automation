@@ -16,7 +16,7 @@ set "DEBUG_DIR=%USERPROFILE%\.chrome-debug"
 echo Using persistent debug profile: %DEBUG_DIR%
 echo Launching Google Chrome on port 9222...
 
-start "" "%CHROME_EXE%" --remote-debugging-port=9222 --user-data-dir="%DEBUG_DIR%" https://dq0uw9vf3nt8l.cloudfront.net
+start "" "%CHROME_EXE%" --remote-debugging-port=9222 --user-data-dir="%DEBUG_DIR%" --profile-directory="Default" https://dq0uw9vf3nt8l.cloudfront.net
 timeout /t 2 /nobreak >nul
 
 echo.

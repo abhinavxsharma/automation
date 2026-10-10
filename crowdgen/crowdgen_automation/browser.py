@@ -51,6 +51,6 @@ def acquire_browser_session(
     context = p.chromium.launch_persistent_context(
         user_data_dir=str(user_dir), channel="chrome", headless=inst.headless,
         viewport={"width": 1400, "height": 900},
-        args=["--disable-blink-features=AutomationControlled"],
+        args=["--profile-directory=Default", "--disable-blink-features=AutomationControlled"],
     )
     return context, context.pages[0] if context.pages else context.new_page(), False
