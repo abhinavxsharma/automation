@@ -4,8 +4,6 @@ import logging
 import time
 
 import playwright.sync_api as pw
-import requests
-from tenacity import RetryError
 
 from crowdgen_automation.auth import launch_project
 from crowdgen_automation.config import Settings
@@ -27,14 +25,16 @@ def process_single_task(page: pw.Page, cfg: Settings, auto_submit: bool) -> bool
     for attempt in range(1, 3):
         logger.info("Generating captions (attempt %d/2)...", attempt)
         captions = generate_captions(img_ref, cfg, error_feedback=error_feedback)
+        if captions.get("is_dense") in (True, "true"):
+            logger.info("Dense document detected. Skipping task as requested...")
+            return skip_task(context, page)
         fill_maven_form(context, captions)
-        if captions.get("unusable_quality") in (True, "true") or captions.get("is_dense") in (True, "true"):
+        if captions.get("unusable_quality") in (True, "true"):
             return submit_task(context, start_time, auto_submit, cfg.target_remaining_sec, page=page)
         passed, error_feedback = click_validate(context)
         if passed and submit_task(context, start_time, auto_submit, cfg.target_remaining_sec, page=page):
             return True
         logger.warning("Attempt %d failed (error: %s).", attempt, error_feedback)
-    logger.warning("Task failed 2 attempts. Skipping task...")
     return skip_task(context, page)
 
 
@@ -49,7 +49,7 @@ def process_maven_tasks(page: pw.Page, cfg: Settings, auto_submit: bool = True) 
         curr_unit = wait_for_new_unit(page, curr_unit)
         try:
             ok = process_single_task(page, cfg, auto_submit=auto_submit)
-        except (pw.Error, TimeoutError, ValueError, RuntimeError, OSError, requests.RequestException, RetryError) as exc:
+        except (pw.Error, TimeoutError, ValueError, RuntimeError, OSError) as exc:
             logger.warning("Task error: %s", exc)
             ok = False
         if not ok:

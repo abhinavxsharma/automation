@@ -55,3 +55,19 @@ def test_process_single_task_skips_after_two_failures(mock_settings: Settings) -
         assert res is True
         assert mock_vlm.call_count == 2
         mock_skip.assert_called_once_with(mock_page, mock_page)
+
+
+def test_process_single_task_skips_dense_document(mock_settings: Settings) -> None:
+    """Verify single task immediately skips when detected as dense document."""
+    mock_page = MagicMock()
+    with (
+        patch("crowdgen_automation.tasks.coordinator.get_task_context", return_value=mock_page),
+        patch("crowdgen_automation.tasks.coordinator.capture_task_image", return_value=("url", "http://img.jpg")),
+        patch("crowdgen_automation.tasks.coordinator.generate_captions", return_value={"is_dense": True}),
+        patch("crowdgen_automation.tasks.coordinator.fill_maven_form") as mock_fill,
+        patch("crowdgen_automation.tasks.coordinator.skip_task", return_value=True) as mock_skip,
+    ):
+        res = process_single_task(mock_page, mock_settings, auto_submit=True)
+        assert res is True
+        mock_skip.assert_called_once_with(mock_page, mock_page)
+        mock_fill.assert_not_called()

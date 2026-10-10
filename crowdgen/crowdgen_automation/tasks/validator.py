@@ -8,7 +8,7 @@ from playwright.sync_api import Error, FrameLocator, Page
 logger = logging.getLogger(__name__)
 VALIDATE_SEL = 'button:has-text("Validate Captions"), button:has-text("Validate")'
 WAIT_SEL = "text=/Checking for duplicate|Validating/i"
-ERR_SEL = "text=/INVALID\\s*-\\s*(DETAILED|SHORT)|cannot be overridden/i"
+ERR_SEL = "text=/INVALID\\s*-\\s*(DETAILED|SHORT)|cannot be overridden|did not include an image status/i"
 OK_SEL = "text=/VALID\\s*-\\s*all checks passed|Captions are valid|You may now submit/i"
 SUBMIT_SEL = 'button:has-text("Submit"), input[value="Submit"]'
 
