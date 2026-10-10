@@ -119,10 +119,14 @@ def test_generate_captions_google_ai_studio() -> None:
     )
     mock_resp = MagicMock()
     mock_resp.json.return_value = {
-        "choices": [
+        "candidates": [
             {
-                "message": {
-                    "content": '{"short_caption": "Apple crate.", "detailed_caption": "A wooden crate filled with red apples."}'
+                "content": {
+                    "parts": [
+                        {
+                            "text": '{"short_caption": "Apple crate.", "detailed_caption": "A wooden crate filled with red apples."}'
+                        }
+                    ]
                 }
             }
         ]
@@ -131,15 +135,14 @@ def test_generate_captions_google_ai_studio() -> None:
         patch("crowdgen_automation.tasks.caption_cache.get_cached_caption", return_value=None),
         patch("crowdgen_automation.tasks.key_pool.load_keys", return_value=[]),
         patch("requests.post", return_value=mock_resp) as mock_post,
+        patch("requests.get", return_value=MagicMock(content=b"fake_image_bytes")),
     ):
         res = generate_captions("https://example.com/apples.jpg", cfg)
         assert res["short_caption"] == "Apple crate."
         url = mock_post.call_args[0][0]
         assert "generativelanguage.googleapis.com" in url
-        headers = mock_post.call_args[1]["headers"]
-        assert headers["Authorization"] == "Bearer AIzaSyTestKey123"
-        payload = mock_post.call_args[1]["json"]
-        assert payload["model"] == "gemini-3-flash-preview"
+        assert "gemini-3-flash-preview:generateContent" in url
+        assert "key=AIzaSyTestKey123" in url
 
 
 def test_generate_captions_rotates_on_429() -> None:

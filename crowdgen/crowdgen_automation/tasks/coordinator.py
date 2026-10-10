@@ -4,6 +4,7 @@ import logging
 import time
 
 import playwright.sync_api as pw
+from tenacity import RetryError
 
 from crowdgen_automation.auth import launch_project
 from crowdgen_automation.config import Settings
@@ -16,7 +17,6 @@ from crowdgen_automation.tasks.validator import click_validate
 from crowdgen_automation.tasks.vision_solver import generate_captions
 
 logger = logging.getLogger(__name__)
-
 
 def process_single_task(page: pw.Page, cfg: Settings, auto_submit: bool) -> bool:
     start_time, context = time.monotonic(), get_task_context(page)
@@ -37,7 +37,6 @@ def process_single_task(page: pw.Page, cfg: Settings, auto_submit: bool) -> bool
         logger.warning("Attempt %d failed (error: %s).", attempt, error_feedback)
     return skip_task(context, page)
 
-
 def process_maven_tasks(page: pw.Page, cfg: Settings, auto_submit: bool = True) -> None:
     launch_project(page)
     logger.info("Starting continuous Maven task loop (max: %d)...", cfg.max_tasks)
@@ -49,7 +48,7 @@ def process_maven_tasks(page: pw.Page, cfg: Settings, auto_submit: bool = True) 
         curr_unit = wait_for_new_unit(page, curr_unit)
         try:
             ok = process_single_task(page, cfg, auto_submit=auto_submit)
-        except (pw.Error, TimeoutError, ValueError, RuntimeError, OSError) as exc:
+        except (pw.Error, RetryError, TimeoutError, ValueError, RuntimeError, OSError) as exc:
             logger.warning("Task error: %s", exc)
             ok = False
         if not ok:
