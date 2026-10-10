@@ -49,7 +49,7 @@ def generate_captions(img_ref: str, cfg: Settings, error_feedback: str | None = 
             caption_cache.save_cached_caption(img_ref, res)
             return res
         except requests.HTTPError as exc:
-            if exc.response is not None and exc.response.status_code in (401, 402, 403, 429):
+            if exc.response is not None and exc.response.status_code in (401, 402, 403, 429, 500, 502, 503):
                 key_pool.mark_key_exhausted(key)
             else:
                 raise

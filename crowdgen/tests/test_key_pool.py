@@ -34,16 +34,16 @@ def test_get_active_key_and_cooldown() -> None:
     keys = ["k1", "k2", "k3"]
     assert get_active_key(keys) == "k1"
 
-    # Mark k1 exhausted with 10s cooldown
+    # Mark k1 exhausted with 10s cooldown -> rotates bottom-up (3->1)
     mark_key_exhausted("k1", cooldown_sec=10.0)
+    assert get_active_key(keys) == "k3"
+
+    # Mark k3 exhausted -> continues bottom-up to k2
+    mark_key_exhausted("k3", cooldown_sec=10.0)
     assert get_active_key(keys) == "k2"
 
     # Mark k2 exhausted
     mark_key_exhausted("k2", cooldown_sec=10.0)
-    assert get_active_key(keys) == "k3"
-
-    # Mark k3 exhausted
-    mark_key_exhausted("k3", cooldown_sec=10.0)
     assert get_active_key(keys) is None
 
     # Reset pool
@@ -58,3 +58,15 @@ def test_key_cooldown_expires() -> None:
     mark_key_exhausted("k_short", cooldown_sec=0.01)
     time.sleep(0.02)
     assert get_active_key(keys) == "k_short"
+
+
+def test_bottom_up_ten_keys_rotation() -> None:
+    """Verify error on key triggers bottom-up (10->1) rotation across 10 keys."""
+    reset_pool()
+    keys = [f"key_{i}" for i in range(1, 11)]
+    assert get_active_key(keys) == "key_1"
+    mark_key_exhausted("key_1", cooldown_sec=60.0)
+    assert get_active_key(keys) == "key_10"
+    mark_key_exhausted("key_10", cooldown_sec=60.0)
+    assert get_active_key(keys) == "key_9"
+

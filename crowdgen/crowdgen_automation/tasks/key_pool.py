@@ -7,6 +7,7 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 _KEY_COOLDOWNS: dict[str, float] = {}
+_BOTTOM_UP: bool = False
 
 
 def load_keys(file_path: str = "openrouter_keys.txt", extra_keys: list[str] | None = None) -> list[str]:
@@ -25,21 +26,25 @@ def load_keys(file_path: str = "openrouter_keys.txt", extra_keys: list[str] | No
 
 
 def get_active_key(keys: list[str]) -> str | None:
-    """Return the first key not currently under cooldown."""
-    now = time.monotonic()
-    for k in keys:
+    """Return first active key; traverses bottom-up (10->1) if rotation triggered."""
+    now, order = time.monotonic(), list(reversed(keys)) if _BOTTOM_UP else keys
+    for k in order:
         if now >= _KEY_COOLDOWNS.get(k, 0.0):
             return k
     return None
 
 
 def mark_key_exhausted(key: str, cooldown_sec: float = 60.0) -> None:
-    """Mark a key as exhausted with a cooldown window."""
+    """Mark key exhausted, activate bottom-up rotation (10->1), and allow cooldown."""
+    global _BOTTOM_UP
     _KEY_COOLDOWNS[key] = time.monotonic() + cooldown_sec
+    _BOTTOM_UP = True
     masked = f"...{key[-6:]}" if len(key) >= 6 else "key"
-    logger.warning("OpenRouter key %s quota exhausted. In cooldown for %ds.", masked, int(cooldown_sec))
+    logger.warning("Key %s exhausted. In cooldown for %ds. Rotated bottom-up (10->1).", masked, int(cooldown_sec))
 
 
 def reset_pool() -> None:
-    """Clear all key cooldowns (useful for tests)."""
+    """Clear all key cooldowns and rotation order (useful for tests)."""
+    global _BOTTOM_UP
     _KEY_COOLDOWNS.clear()
+    _BOTTOM_UP = False
